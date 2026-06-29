@@ -71,25 +71,25 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Interactive <span class="text-accent">Resume</span></h2>
-                <p class="section-subtitle">Type <code>help</code> to see available commands and explore my skills, projects, and experience.</p>
+                <p class="section-subtitle">Click the buttons below or type <code>help</code> to explore. Press <code>TAB</code> for auto-completion!</p>
             </div>
             
+            <!-- Quick Commands (No typing required) -->
+            <div class="terminal-quick-cmds" id="quick-cmds">
+                <button class="quick-cmd-btn" data-cmd="help">help</button>
+                <button class="quick-cmd-btn" data-cmd="about">about</button>
+                <button class="quick-cmd-btn" data-cmd="skills">skills</button>
+                <button class="quick-cmd-btn" data-cmd="mastery">mastery</button>
+                <button class="quick-cmd-btn" data-cmd="projects">projects</button>
+                <button class="quick-cmd-btn" data-cmd="experience">experience</button>
+                <button class="quick-cmd-btn" data-cmd="contact">contact</button>
+                <button class="quick-cmd-btn" data-cmd="clear">clear</button>
+            </div>
+
             <div class="terminal-window" id="terminal-window">
-                <div class="terminal-header">
-                    <div class="terminal-buttons">
-                        <span class="btn-close"></span>
-                        <span class="btn-minimize"></span>
-                        <span class="btn-maximize"></span>
-                    </div>
-                    <div class="terminal-title">guest@ch4120n-resume: ~</div>
-                    <div class="terminal-header-right"></div>
-                </div>
+                <!-- ... (keep existing terminal-header) ... -->
                 <div class="terminal-body" id="terminal-body">
-                    <div class="terminal-output" id="terminal-output"></div>
-                    <div class="terminal-input-line">
-                        <span class="prompt">guest@ch4120n-resume:~$</span>
-                        <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false">
-                    </div>
+                    <!-- ... (keep existing terminal-output and input) ... -->
                 </div>
             </div>
         </div>
@@ -179,7 +179,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Contact Section -->
     <section class="contact-section" id="contact">
         <div class="container">
