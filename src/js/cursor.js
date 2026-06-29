@@ -15,5 +15,19 @@
         dot.style.top = `${mouseY}px`;
     });
 
+    function animateOutline() {
+        // Lerp (Linear Interpolation) for smooth following
+        const speed = 0.15;
+        outlineX += (mouseX - outlineX) * speed;
+        outlineY += (mouseY - outlineY) * speed;
+        
+        outline.style.left = `${outlineX}px`;
+        outline.style.top = `${outlineY}px`;
+        
+        requestAnimationFrame(animateOutline);
+    }
+    
+    animateOutline();
+
     
 })();
