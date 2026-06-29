@@ -4,3 +4,8 @@
     z-index: 9999; opacity: 0; transition: opacity 0.3s ease;
 }
 
+.cursor-dot { width: 8px; height: 8px; background-color: var(--accent); z-index: 10000; }
+.cursor-outline {
+    width: 40px; height: 40px; border: 2px solid var(--accent);
+    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
