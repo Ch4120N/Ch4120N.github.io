@@ -20,5 +20,13 @@
         scrollToBottom();
     }
 
+    function printCommand(cmd) {
+        const div = document.createElement('div');
+        div.className = 'command-echo';
+        div.innerHTML = `<span class="prompt-echo">guest@ch4120n-resume:~$</span> ${escapeHtml(cmd)}`;
+        outputEl.appendChild(div);
+        scrollToBottom();
+    }
+
     
 })();
