@@ -51,9 +51,10 @@ Ch4120N - A passionate security-driven technologist specializing in ethical hack
         { year: "2019 - 2021", role: "Linux System Administrator", desc: "Managing, hardening, and automating Linux servers and infrastructure." }
     ],
     commands: [
-        'help', 'about', 'skills', 'mastery', 'projects', 'certifications', 
-        'services', 'contact', 'experience', 'resume', 'theme', 'clear', 
-        'whoami', 'sudo', 'exit', 'languages'
+        'help', 'about', 'skills', 'mastery', 'journey', 
+        'projects', 'repos', 'stats', 'services', 'certifications', 
+        'learning', 'goals', 'donate', 'fun', 'license', 'contact', 
+        'resume', 'theme', 'clear', 'whoami', 'sudo', 'exit'
     ],
     services: [
         "🔒 Penetration Testing & Vulnerability Assessment",
@@ -61,6 +62,12 @@ Ch4120N - A passionate security-driven technologist specializing in ethical hack
         "🤖 Custom Security Tools & Bot Development",
         "🛠️ Technical Consulting & Security Mentoring"
     ],
+    servicesDetailed: {
+        "<i class='fas fa-shield-halved'></i> Cybersecurity": ["Penetration Testing", "Vulnerability Assessment", "Security Audits", "Ethical Hacking", "Bug Bounty Hunting"],
+        "<i class='fas fa-bolt'></i> Automation": ["Linux Server Automation", "System Hardening", "Infrastructure Security", "DevOps Solutions", "CI/CD Pipelines"],
+        "<i class='fas fa-robot'></i> Development": ["Custom Security Tools", "Telegram Bots", "API Integrations", "Open Source Projects", "Full-Stack Development"],
+        "<i class='fas fa-handshake'></i> Consulting": ["Code Review", "Technical Consulting", "Security Mentoring", "Troubleshooting", "Project Management"]
+    },
     ascii: `
   ___  _   _  __  __  ___   ___  _  _ 
  / __)( )_( )/. |/  )(__ \\ / _ \\( \\( )
