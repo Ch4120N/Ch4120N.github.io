@@ -18,5 +18,11 @@ Ch4120N - A passionate security-driven technologist specializing in ethical hack
         "🧠 AI & Data Science": ["TensorFlow", "PyTorch"],
         "🐧 Operating Systems": ["Linux", "Ubuntu", "Debian", "Arch", "Mint", "Red Hat", "Apple", "Windows", "BSD", "OpenBSD", "Raspberry Pi"]
     },
-      
+    projects: [
+        { name: "Charon SMS Bomber", desc: "Powerful Iranian SMS Testing Tool", link: "https://github.com/Ch4120N/Charon-SMS-Bomber" },
+        { name: "Charon DNS Changer", desc: "Fast DNS Configuration Tool", link: "https://github.com/Ch4120N/Charon-DNS-Changer-V1.0" },
+        { name: "Charon MD5 Hash Cracker", desc: "Fastest MD5 Brute Force Tool", link: "https://github.com/Ch4120N/Charon-MD5-Hash-Cracker" },
+        { name: "ChSSHKracker", desc: "Advanced Multi-Threaded SSH Brute Force Tool", link: "https://github.com/Ch4120N/ChSSHKracker" }
+    ],
+    
 };
