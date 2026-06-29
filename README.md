@@ -3,7 +3,7 @@
 <div align="center">
   <img src="https://img.shields.io/badge/Status-Live-FF0000?style=for-the-badge&logo=github&logoColor=white" alt="Status" />
   <img src="https://img.shields.io/badge/Theme-Dark%20%2F%20Light-0D1117?style=for-the-badge&logo=moon&logoColor=white" alt="Theme" />
-  <img src="https://img.shields.io/badge/License-Apache%20v2/GPLv3/CGBL-FF0000?style=for-the-badge&logo=creative-commons&logoColor=white" alt="License" />
+  <img src="https://img.shields.io/badge/License-GPLv3-FF0000?style=for-the-badge&logo=creative-commons&logoColor=white" alt="License" />
   <img src="https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-181717?style=for-the-badge&logo=github&logoColor=white" alt="Deployment" />
 </div>
 
@@ -105,7 +105,7 @@ Since this is a static website, running it locally is extremely simple.
 ---
 
 ## ⚖️ License & Ethics
-- **License**: This project is open-source under the **Apache v2/GPLv3/CGBL License**.
+- **License**: This project is open-source under the **GPL v3 License**.
 - **Ethical Use Policy**: The tools and projects showcased on this website are strictly for authorized penetration testing, security research, and educational purposes only. Unauthorized or malicious use is strictly prohibited.
 
 ---
