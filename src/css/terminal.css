@@ -38,3 +38,5 @@
 .terminal-output .output-text { margin-bottom: 15px; color: var(--terminal-text); }
 .terminal-output .output-text .highlight { color: var(--accent); font-weight: 600; }
 .terminal-output .output-text .link { color: #58a6ff; text-decoration: underline; }
+[data-theme="light"] .terminal-output .output-text .link { color: #0969da; }
+.terminal-output .ascii-art { color: var(--accent); line-height: 1.2; font-size: 0.8rem; margin-bottom: 20px; display: block; }
