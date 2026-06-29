@@ -27,3 +27,8 @@
 .terminal-input-line { display: flex; align-items: center; margin-top: 10px; }
 
 .prompt { color: var(--terminal-prompt); margin-right: 10px; white-space: nowrap; user-select: none; }
+.terminal-input {
+    background: transparent; border: none; outline: none;
+    color: var(--terminal-text); font-family: 'Fira Code', monospace;
+    font-size: 0.95rem; flex: 1; caret-color: var(--accent);
+}
