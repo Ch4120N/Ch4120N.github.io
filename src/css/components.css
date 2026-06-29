@@ -19,3 +19,13 @@
     width: 0; height: 2px; background-color: var(--accent); transition: var(--transition);
 }
 .nav-link:hover::after { width: 100%; }
+
+.theme-toggle {
+    background: none; border: none; color: var(--text-primary);
+    font-size: 1.2rem; display: flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: 50%; transition: var(--transition);
+}
+.theme-toggle:hover { background-color: var(--bg-secondary); color: var(--accent); }
+.icon-moon { display: none; }
+[data-theme="light"] .icon-sun { display: none; }
+[data-theme="light"] .icon-moon { display: block; }
