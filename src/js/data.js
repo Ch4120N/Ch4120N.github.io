@@ -24,5 +24,10 @@ Ch4120N - A passionate security-driven technologist specializing in ethical hack
         { name: "Charon MD5 Hash Cracker", desc: "Fastest MD5 Brute Force Tool", link: "https://github.com/Ch4120N/Charon-MD5-Hash-Cracker" },
         { name: "ChSSHKracker", desc: "Advanced Multi-Threaded SSH Brute Force Tool", link: "https://github.com/Ch4120N/ChSSHKracker" }
     ],
+    certifications: [
+        "🧪 Offensive Security: OSCP (In Progress), PWK (Complete)",
+        "🛡️ Ethical Hacking: CEH (Certified)",
+        "🎮 CTF & Competitions: HackTheBox (Pro Hacker), CTF (Top 10%), TryHackMe (Active)"
+    ],
     
 };
