@@ -57,3 +57,9 @@
 .btn-primary:hover { background-color: var(--accent-secondary); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2); }
 .btn-secondary { background-color: transparent; border: 2px solid var(--accent); color: var(--accent); }
 .btn-secondary:hover { background-color: var(--accent); color: #fff; transform: translateY(-3px); }
+
+.hero-scroll-indicator {
+    position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; color: var(--text-secondary);
+    font-size: 0.9rem; animation: float 2s ease-in-out infinite;
+}
