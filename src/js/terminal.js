@@ -11,5 +11,14 @@
         const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
         return text.replace(/[&<>"']/g, m => map[m]);
     }
+
+    function printToTerminal(html, className = '') {
+        const div = document.createElement('div');
+        div.className = `output-text ${className}`;
+        div.innerHTML = html;
+        outputEl.appendChild(div);
+        scrollToBottom();
+    }
+
     
 })();
