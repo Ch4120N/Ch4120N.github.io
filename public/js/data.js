@@ -45,6 +45,11 @@ Ch4120N - A passionate security-driven technologist specializing in ethical hack
         { name: "C/C++", level: 80 },
         { name: "Go", level: 70 }
     ],
+    experience: [
+        { year: "2023 - Present", role: "Freelance Cybersecurity Consultant", desc: "Providing penetration testing, security audits, and automation solutions." },
+        { year: "2021 - 2023", role: "Open Source Security Developer", desc: "Developing tools like Charon SMS Bomber, MD5 Cracker, and SSH Kracker." },
+        { year: "2019 - 2021", role: "Linux System Administrator", desc: "Managing, hardening, and automating Linux servers and infrastructure." }
+    ],
     services: [
         "🔒 Penetration Testing & Vulnerability Assessment",
         "⚡ Linux Server Automation & System Hardening",
