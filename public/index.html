@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ch4120N | Cybersecurity Expert & Penetration Tester</title>
-    <meta name="description" content="Ch4120N - Cybersecurity Expert, Penetration Tester, Linux Automation Specialist, and Open Source Developer. Explore my interactive resume.">
-    <meta name="keywords" content="Ch4120N, Cybersecurity, Penetration Testing, Ethical Hacking, Linux, Open Source, Resume">
+    <meta name="description" content="Ch4120N - Cybersecurity Expert, Penetration Tester, Linux Automation Specialist, and Open Source Developer.">
     <meta name="google-site-verification" content="l4gzIHopgDDt57xRYeRvJZ5DYgg4lLb-qPciUxhNxkY" />
     
-    <!-- CSS Modules -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/components.css">
@@ -16,215 +14,325 @@
     <link rel="stylesheet" href="css/cursor.css">
     <link rel="stylesheet" href="css/responsive.css">
     
-    <!-- Fonts -->
+    <!-- Professional Icons CDNs -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Custom Cursor -->
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
-    <!-- Header -->
     <header class="header" id="header">
         <div class="container header-container">
             <a href="#" class="logo">Ch4120N<span class="logo-accent">_</span></a>
             <nav class="nav">
                 <a href="#hero" class="nav-link">Home</a>
-                <a href="#terminal-section" class="nav-link">Resume</a>
+                <a href="#terminal-section" class="nav-link">Terminal</a>
+                <a href="#skills-section" class="nav-link">Skills</a>
+                <a href="#repositories" class="nav-link">Repos</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
             <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
             </button>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="container hero-container">
             <div class="hero-content">
                 <p class="hero-greeting">Hello, World! I'm</p>
                 <h1 class="hero-title">Ch4120N</h1>
-                <h2 class="hero-subtitle">
-                    <span class="typed-text"></span><span class="cursor-blink">&nbsp;</span>
-                </h2>
-                <p class="hero-description">
-                    A passionate security-driven technologist specializing in ethical hacking, penetration testing, and building robust cybersecurity solutions.
-                </p>
+                <h2 class="hero-subtitle"><span class="typed-text"></span><span class="cursor-blink">&nbsp;</span></h2>
+                <p class="hero-description">A passionate security-driven technologist specializing in ethical hacking, penetration testing, and building robust cybersecurity solutions.</p>
                 <div class="hero-buttons">
-                    <a href="#terminal-section" class="btn btn-primary">Explore Resume</a>
-                    <a href="https://github.com/Ch4120N" target="_blank" class="btn btn-secondary">GitHub Profile</a>
+                    <a href="#terminal-section" class="btn btn-primary"><i class="fas fa-terminal"></i> Open Terminal</a>
+                    <a href="https://github.com/Ch4120N" target="_blank" class="btn btn-secondary"><i class="fab fa-github"></i> GitHub Profile</a>
                 </div>
             </div>
         </div>
-        <div class="hero-scroll-indicator">
-            <span>Scroll Down</span>
-            <div class="scroll-arrow"></div>
-        </div>
     </section>
 
-    <!-- Terminal Section -->
     <section class="terminal-section" id="terminal-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Interactive <span class="text-accent">Resume</span></h2>
-                <p class="section-subtitle">Click the buttons below or type <code>help</code> to explore. Press <code>TAB</code> for auto-completion!</p>
+                <p class="section-subtitle">Click the buttons below or type <code>help</code>. Press <code>TAB</code> for auto-completion!</p>
             </div>
-            
-            <!-- Quick Commands (No typing required) -->
             <div class="terminal-quick-cmds" id="quick-cmds">
                 <button class="quick-cmd-btn" data-cmd="help">help</button>
                 <button class="quick-cmd-btn" data-cmd="about">about</button>
                 <button class="quick-cmd-btn" data-cmd="skills">skills</button>
-                <button class="quick-cmd-btn" data-cmd="mastery">mastery</button>
-                <button class="quick-cmd-btn" data-cmd="projects">projects</button>
-                <button class="quick-cmd-btn" data-cmd="experience">experience</button>
+                <button class="quick-cmd-btn" data-cmd="repos">repos</button>
+                <button class="quick-cmd-btn" data-cmd="stats">stats</button>
+                <button class="quick-cmd-btn" data-cmd="services">services</button>
                 <button class="quick-cmd-btn" data-cmd="contact">contact</button>
                 <button class="quick-cmd-btn" data-cmd="clear">clear</button>
             </div>
-
             <div class="terminal-window" id="terminal-window">
-                <!-- ... (keep existing terminal-header) ... -->
+                <div class="terminal-header">
+                    <div class="terminal-buttons"><span class="btn-close"></span><span class="btn-minimize"></span><span class="btn-maximize"></span></div>
+                    <div class="terminal-title">guest@ch4120n-resume: ~</div>
+                    <div class="terminal-header-right"></div>
+                </div>
                 <div class="terminal-body" id="terminal-body">
-                    <!-- ... (keep existing terminal-output and input) ... -->
+                    <div class="terminal-output" id="terminal-output"></div>
+                    <div class="terminal-input-line">
+                        <span class="prompt">guest@ch4120n-resume:~$</span>
+                        <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills & Mastery Section -->
-    <section class="progress-section" id="skills-section">
+    <section class="skills-section" id="skills-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Skills & <span class="text-accent">Mastery</span></h2>
-                <p class="section-subtitle">A visual representation of my technical proficiency and tool mastery.</p>
             </div>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>💻 Core Technologies</h3>
-                    <div class="skill-item" data-progress="95">
-                        <div class="skill-header"><span class="skill-name">Python & Automation</span><span class="skill-percent">95%</span></div>
-                        <div class="progress-bar-container"><div class="progress-bar-fill"></div></div>
-                    </div>
-                    <div class="skill-item" data-progress="90">
-                        <div class="skill-header"><span class="skill-name">Linux Administration</span><span class="skill-percent">90%</span></div>
-                        <div class="progress-bar-container"><div class="progress-bar-fill"></div></div>
-                    </div>
-                    <div class="skill-item" data-progress="88">
-                        <div class="skill-header"><span class="skill-name">Penetration Testing</span><span class="skill-percent">88%</span></div>
-                        <div class="progress-bar-container"><div class="progress-bar-fill"></div></div>
-                    </div>
+                    <h3><i class="fas fa-microchip"></i> Core Competencies</h3>
+                    <div class="skill-item" data-progress="95"><div class="skill-header"><span class="skill-name"><i class="devicon-python-plain colored"></i> Python & Automation</span><span class="skill-percent">95%</span></div><div class="progress-bar-container"><div class="progress-bar-fill"></div></div></div>
+                    <div class="skill-item" data-progress="90"><div class="skill-header"><span class="skill-name"><i class="devicon-linux-plain colored"></i> Linux Administration</span><span class="skill-percent">90%</span></div><div class="progress-bar-container"><div class="progress-bar-fill"></div></div></div>
+                    <div class="skill-item" data-progress="88"><div class="skill-header"><span class="skill-name"><i class="fas fa-user-secret"></i> Penetration Testing</span><span class="skill-percent">88%</span></div><div class="progress-bar-container"><div class="progress-bar-fill"></div></div></div>
                 </div>
                 <div class="skill-category">
-                    <h3>🛡️ Security & Exploitation</h3>
-                    <div class="skill-item" data-progress="90">
-                        <div class="skill-header"><span class="skill-name">Web Exploitation</span><span class="skill-percent">90%</span></div>
-                        <div class="progress-bar-container"><div class="progress-bar-fill"></div></div>
-                    </div>
-                    <div class="skill-item" data-progress="85">
-                        <div class="skill-header"><span class="skill-name">Network Security</span><span class="skill-percent">85%</span></div>
-                        <div class="progress-bar-container"><div class="progress-bar-fill"></div></div>
-                    </div>
-                    <div class="skill-item" data-progress="75">
-                        <div class="skill-header"><span class="skill-name">Reverse Engineering</span><span class="skill-percent">75%</span></div>
-                        <div class="progress-bar-container"><div class="progress-bar-fill"></div></div>
-                    </div>
+                    <h3><i class="fas fa-shield-halved"></i> Security & Exploitation</h3>
+                    <div class="skill-item" data-progress="90"><div class="skill-header"><span class="skill-name"><i class="fas fa-globe"></i> Web Exploitation</span><span class="skill-percent">90%</span></div><div class="progress-bar-container"><div class="progress-bar-fill"></div></div></div>
+                    <div class="skill-item" data-progress="85"><div class="skill-header"><span class="skill-name"><i class="fas fa-network-wired"></i> Network Security</span><span class="skill-percent">85%</span></div><div class="progress-bar-container"><div class="progress-bar-fill"></div></div></div>
+                    <div class="skill-item" data-progress="75"><div class="skill-header"><span class="skill-name"><i class="fas fa-code"></i> Reverse Engineering</span><span class="skill-percent">75%</span></div><div class="progress-bar-container"><div class="progress-bar-fill"></div></div></div>
                 </div>
-                <div class="skill-category">
-                    <h3>🗣️ Languages</h3>
-                    <div class="skill-item" data-progress="100">
-                        <div class="skill-header"><span class="skill-name">Persian (Farsi)</span><span class="skill-percent">100%</span></div>
-                        <div class="progress-bar-container"><div class="progress-bar-fill"></div></div>
+            </div>
+            
+            <div class="tech-stack-wrapper">
+                <h3 class="tech-stack-title"><i class="fas fa-layer-group"></i> Full Tech Stack</h3>
+                <div class="tech-categories">
+                    <div class="tech-category">
+                        <h4><i class="fas fa-code"></i> Programming Languages</h4>
+                        <div class="tech-grid">
+                            <div class="tech-item" title="Python"><i class="devicon-python-plain colored"></i></div>
+                            <div class="tech-item" title="C"><i class="devicon-c-plain colored"></i></div>
+                            <div class="tech-item" title="C++"><i class="devicon-cplusplus-plain colored"></i></div>
+                            <div class="tech-item" title="C#"><i class="devicon-csharp-plain colored"></i></div>
+                            <div class="tech-item" title="Go"><i class="devicon-go-plain colored"></i></div>
+                            <div class="tech-item" title="Java"><i class="devicon-java-plain colored"></i></div>
+                            <div class="tech-item" title="JavaScript"><i class="devicon-javascript-plain colored"></i></div>
+                            <div class="tech-item" title="TypeScript"><i class="devicon-typescript-plain colored"></i></div>
+                            <div class="tech-item" title="PHP"><i class="devicon-php-plain colored"></i></div>
+                            <div class="tech-item" title="Ruby"><i class="devicon-ruby-plain colored"></i></div>
+                            <div class="tech-item" title="Rust"><i class="devicon-rust-plain colored"></i></div>
+                            <div class="tech-item" title="Bash"><i class="devicon-bash-plain colored"></i></div>
+                            <div class="tech-item" title="HTML5"><i class="devicon-html5-plain colored"></i></div>
+                            <div class="tech-item" title="CSS3"><i class="devicon-css3-plain colored"></i></div>
+                        </div>
                     </div>
-                    <div class="skill-item" data-progress="85">
-                        <div class="skill-header"><span class="skill-name">English</span><span class="skill-percent">85%</span></div>
-                        <div class="progress-bar-container"><div class="progress-bar-fill"></div></div>
+                    <div class="tech-category">
+                        <h4><i class="fas fa-cubes"></i> Frameworks & Libraries</h4>
+                        <div class="tech-grid">
+                            <div class="tech-item" title="React"><i class="devicon-react-original colored"></i></div>
+                            <div class="tech-item" title="Next.js"><i class="devicon-nextjs-line colored"></i></div>
+                            <div class="tech-item" title="Node.js"><i class="devicon-nodejs-plain colored"></i></div>
+                            <div class="tech-item" title="Django"><i class="devicon-django-plain colored"></i></div>
+                            <div class="tech-item" title="Flask"><i class="devicon-flask-plain-wordmark colored"></i></div>
+                            <div class="tech-item" title="Laravel"><i class="devicon-laravel-plain colored"></i></div>
+                            <div class="tech-item" title="jQuery"><i class="devicon-jquery-plain-wordmark colored"></i></div>
+                            <div class="tech-item" title="Bootstrap"><i class="devicon-bootstrap-plain-wordmark colored"></i></div>
+                            <div class="tech-item" title="Tailwind CSS"><i class="devicon-tailwindcss-plain colored"></i></div>
+                            <div class="tech-item" title=".NET"><i class="devicon-dotnet-plain-wordmark colored"></i></div>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4><i class="fas fa-database"></i> Databases & DevOps</h4>
+                        <div class="tech-grid">
+                            <div class="tech-item" title="MySQL"><i class="devicon-mysql-plain-wordmark colored"></i></div>
+                            <div class="tech-item" title="PostgreSQL"><i class="devicon-postgresql-plain colored"></i></div>
+                            <div class="tech-item" title="MongoDB"><i class="devicon-mongodb-plain-wordmark colored"></i></div>
+                            <div class="tech-item" title="Docker"><i class="devicon-docker-plain-wordmark colored"></i></div>
+                            <div class="tech-item" title="Git"><i class="devicon-git-plain colored"></i></div>
+                            <div class="tech-item" title="GitHub"><i class="devicon-github-original-wordmark colored"></i></div>
+                            <div class="tech-item" title="AWS"><i class="devicon-amazonwebservices-plain-wordmark colored"></i></div>
+                            <div class="tech-item" title="Nginx"><i class="devicon-nginx-original colored"></i></div>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4><i class="fas fa-tools"></i> Tools & Operating Systems</h4>
+                        <div class="tech-grid">
+                            <div class="tech-item" title="VS Code"><i class="devicon-vscode-plain-wordmark colored"></i></div>
+                            <div class="tech-item" title="Vim"><i class="devicon-vim-plain colored"></i></div>
+                            <div class="tech-item" title="Kali Linux"><i class="devicon-kalilinux-plain colored"></i></div>
+                            <div class="tech-item" title="Ubuntu"><i class="devicon-ubuntu-plain-wordmark colored"></i></div>
+                            <div class="tech-item" title="Arch Linux"><i class="devicon-archlinux-plain-wordmark colored"></i></div>
+                            <div class="tech-item" title="TensorFlow"><i class="devicon-tensorflow-original colored"></i></div>
+                            <div class="tech-item" title="Figma"><i class="devicon-figma-plain colored"></i></div>
+                            <div class="tech-item" title="Arduino"><i class="devicon-arduino-plain-wordmark colored"></i></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Timeline Section -->
-    <section class="experience-section" id="experience">
+    <section class="experience-section" id="journey">
+        <div class="container">
+            <div class="section-header"><h2 class="section-title">Professional <span class="text-accent">Journey</span></h2></div>
+            <div class="timeline">
+                <div class="timeline-item left"><div class="timeline-content"><div class="timeline-year">2023 - Present</div><h3 class="timeline-role"><i class="fas fa-user-shield"></i> Freelance Cybersecurity Consultant</h3><p class="timeline-desc">Providing penetration testing, security audits, and custom automation solutions for various clients.</p></div></div>
+                <div class="timeline-item right"><div class="timeline-content"><div class="timeline-year">2021 - 2023</div><h3 class="timeline-role"><i class="fas fa-code-branch"></i> Open Source Security Developer</h3><p class="timeline-desc">Developing and maintaining security tools like Charon SMS Bomber, MD5 Cracker, and SSH Kracker.</p></div></div>
+                <div class="timeline-item left"><div class="timeline-content"><div class="timeline-year">2019 - 2021</div><h3 class="timeline-role"><i class="fas fa-server"></i> Linux System Administrator</h3><p class="timeline-desc">Managing, hardening, and automating Linux servers and infrastructure for various projects.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <div class="section-header"><h2 class="section-title">Featured <span class="text-accent">Projects</span></h2></div>
+            <div class="projects-grid">
+                <a href="https://github.com/Ch4120N/Charon-SMS-Bomber" target="_blank" class="project-card"><div class="project-icon"><i class="fas fa-bomb"></i></div><h3>Charon SMS Bomber</h3><p>Powerful Iranian SMS Testing Tool</p></a>
+                <a href="https://github.com/Ch4120N/Charon-DNS-Changer-V1.0" target="_blank" class="project-card"><div class="project-icon"><i class="fas fa-network-wired"></i></div><h3>Charon DNS Changer</h3><p>Fast DNS Configuration Tool</p></a>
+                <a href="https://github.com/Ch4120N/Charon-MD5-Hash-Cracker" target="_blank" class="project-card"><div class="project-icon"><i class="fas fa-lock-open"></i></div><h3>Charon MD5 Hash Cracker</h3><p>Fastest MD5 Brute Force Tool</p></a>
+                <a href="https://github.com/Ch4120N/ChSSHKracker" target="_blank" class="project-card"><div class="project-icon"><i class="fas fa-terminal"></i></div><h3>ChSSHKracker</h3><p>Advanced Multi-Threaded SSH Brute Force Tool</p></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="repos-section" id="repositories">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Professional <span class="text-accent">Journey</span></h2>
+                <h2 class="section-title">All <span class="text-accent">Repositories</span></h2>
+                <p class="section-subtitle">Dynamically fetched from GitHub. Explore all my open-source projects and tools.</p>
             </div>
-            <div class="timeline">
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2023 - Present</div>
-                        <h3 class="timeline-role">Freelance Cybersecurity Consultant</h3>
-                        <p class="timeline-desc">Providing penetration testing, security audits, and custom automation solutions for various clients.</p>
+            <div class="repos-grid" id="repos-grid"><p class="loading-text"><i class="fas fa-spinner fa-spin"></i> Loading repositories...</p></div>
+            <div class="pagination-controls">
+                <button id="prev-page" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                <span id="page-info">Page 1</span>
+                <button id="next-page">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="github-stats-section" id="github-stats">
+        <div class="container">
+            <div class="section-header"><h2 class="section-title">GitHub <span class="text-accent">Statistics</span></h2></div>
+            <div class="stats-grid">
+                <!-- FIXED URLS: Using demolab.com for streak, and raw.githubusercontent.com for snake -->
+                <img src="https://streak-stats.demolab.com/?user=Ch4120N&theme=dark&hide_border=true&border_radius=15&ring=FF0000&fire=FF0000&currStreakLabel=FF0000&sideLabels=FF0000&sideNums=FFFFFF&dates=FFFFFF&background=0D1117" alt="Streak" class="stats-img github-img" />
+                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ch4120N&theme=radical&hide_border=true&layout=compact&langs_count=8&bg_color=0D1117&title_color=FF0000&text_color=FFFFFF&border_color=FF0000&border_radius=15" alt="Langs" class="stats-img github-img" />
+                <img src="https://github-readme-stats.vercel.app/api?username=Ch4120N&theme=radical&hide_border=true&show_icons=true&include_all_commits=true&count_private=true&bg_color=0D1117&title_color=FF0000&text_color=FFFFFF&icon_color=FF0000&border_color=FF0000&border_radius=15" alt="Stats" class="stats-img full-width github-img" />
+                <img src="https://github-profile-trophy.vercel.app/?username=Ch4120N&theme=radical&no-frame=true&no-bg=true&column=7&margin-w=15&margin-h=15" alt="Trophies" class="stats-img full-width github-img" />
+                <img src="https://raw.githubusercontent.com/Ch4120N/Ch4120N/main/dist/github-contribution-grid-snake.svg" alt="Snake" class="stats-img full-width github-img" />
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header"><h2 class="section-title">Services & <span class="text-accent">Expertise</span></h2></div>
+            <div class="services-grid">
+                <div class="service-card"><div class="service-icon"><i class="fas fa-shield-halved"></i></div><h3>Cybersecurity</h3><ul><li>Penetration Testing</li><li>Vulnerability Assessment</li><li>Security Audits</li><li>Ethical Hacking</li><li>Bug Bounty Hunting</li></ul></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-bolt"></i></div><h3>Automation</h3><ul><li>Linux Server Automation</li><li>System Hardening</li><li>Infrastructure Security</li><li>DevOps Solutions</li><li>CI/CD Pipelines</li></ul></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-robot"></i></div><h3>Development</h3><ul><li>Custom Security Tools</li><li>Telegram Bots</li><li>API Integrations</li><li>Open Source Projects</li><li>Full-Stack Development</li></ul></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-handshake"></i></div><h3>Consulting</h3><ul><li>Code Review</li><li>Technical Consulting</li><li>Security Mentoring</li><li>Troubleshooting</li><li>Project Management</li></ul></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="certifications-section" id="certifications">
+        <div class="container">
+            <div class="section-header"><h2 class="section-title">Certifications & <span class="text-accent">Achievements</span></h2></div>
+            <div class="certs-grid">
+                <div class="cert-card"><div class="cert-icon"><i class="fas fa-flask"></i></div><h3>Offensive Security</h3><div class="cert-badges"><span class="badge">OSCP (In Progress)</span><span class="badge">PWK (Complete)</span></div></div>
+                <div class="cert-card"><div class="cert-icon"><i class="fas fa-user-secret"></i></div><h3>Ethical Hacking</h3><div class="cert-badges"><span class="badge">CEH Certified</span></div></div>
+                <div class="cert-card"><div class="cert-icon"><i class="fas fa-trophy"></i></div><h3>CTF & Competitions</h3><div class="cert-badges"><span class="badge">HTB Pro Hacker</span><span class="badge">Top 10% CTF</span><span class="badge">THM Active</span></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="learning-section" id="learning">
+        <div class="container">
+            <div class="section-header"><h2 class="section-title">Currently <span class="text-accent">Learning</span></h2></div>
+            <div class="learning-grid">
+                <div class="learning-card"><i class="fas fa-flask"></i> OSCP (Studying)</div>
+                <div class="learning-card"><i class="fas fa-brain"></i> AI & ML (Exploring)</div>
+                <div class="learning-card"><i class="fas fa-cloud"></i> Cloud Security (Learning)</div>
+                <div class="learning-card"><i class="fas fa-dharmachakra"></i> Kubernetes (Mastering)</div>
+                <div class="learning-card"><i class="fas fa-link"></i> Blockchain (Exploring)</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="goals-section" id="goals">
+        <div class="container">
+            <div class="section-header"><h2 class="section-title">Goals & <span class="text-accent">Roadmap</span></h2></div>
+            <div class="goals-grid">
+                <div class="goal-card"><div class="goal-icon"><i class="fas fa-rocket"></i></div><h3>Automation Excellence</h3><p>Build comprehensive automation solutions</p></div>
+                <div class="goal-card"><div class="goal-icon"><i class="fas fa-graduation-cap"></i></div><h3>Advanced Security Training</h3><p>Master AI & ML for cybersecurity</p></div>
+                <div class="goal-card"><div class="goal-icon"><i class="fas fa-seedling"></i></div><h3>Community Contribution</h3><p>Mentor and support open-source community</p></div>
+                <div class="goal-card"><div class="goal-icon"><i class="fas fa-mask"></i></div><h3>Privacy-First Development</h3><p>Contribute to privacy-focused tools</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="support-section" id="support">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Support <span class="text-accent">My Work</span></h2>
+                <p class="section-subtitle">Your contributions help maintain and improve cybersecurity tools for the community.</p>
+            </div>
+            <div class="support-content">
+                <div class="crypto-addresses">
+                    <div class="crypto-item">
+                        <div class="crypto-info"><i class="fab fa-bitcoin crypto-logo btc"></i><div><strong>Bitcoin (BTC)</strong><code>bc1ql4syps7qpa3djqrxwht3g66tldyh4j7qsyjkq0</code></div></div>
+                        <button class="copy-btn" data-address="bc1ql4syps7qpa3djqrxwht3g66tldyh4j7qsyjkq0"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <div class="crypto-item">
+                        <div class="crypto-info"><i class="fab fa-ethereum crypto-logo eth"></i><div><strong>Ethereum (ETH)</strong><code>0xfddbd535a4ad28792cbebceee3d6982d774e6d13</code></div></div>
+                        <button class="copy-btn" data-address="0xfddbd535a4ad28792cbebceee3d6982d774e6d13"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <div class="crypto-item">
+                        <div class="crypto-info"><i class="fas fa-coins crypto-logo usdt"></i><div><strong>Tether (USDT)</strong><code>3Cq6HRQsiwZFmPEQfG9eJkZE2QGChvf2VN</code></div></div>
+                        <button class="copy-btn" data-address="3Cq6HRQsiwZFmPEQfG9eJkZE2QGChvf2VN"><i class="fas fa-copy"></i></button>
                     </div>
                 </div>
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2021 - 2023</div>
-                        <h3 class="timeline-role">Open Source Security Developer</h3>
-                        <p class="timeline-desc">Developing and maintaining security tools like Charon SMS Bomber, MD5 Cracker, and SSH Kracker.</p>
-                    </div>
-                </div>
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2019 - 2021</div>
-                        <h3 class="timeline-role">Linux System Administrator</h3>
-                        <p class="timeline-desc">Managing, hardening, and automating Linux servers and infrastructure for various projects.</p>
-                    </div>
+                <div class="daramet-link">
+                    <h3><i class="fas fa-heart"></i> For Iranian Supporters:</h3>
+                    <a href="https://daramet.com/Ch4120N" target="_blank" class="btn btn-primary">Donate via Daramet</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact-section" id="contact">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get In <span class="text-accent">Touch</span></h2>
-                <p class="section-subtitle">Have a project in mind or want to collaborate? Feel free to reach out!</p>
-            </div>
+            <div class="section-header"><h2 class="section-title">Get In <span class="text-accent">Touch</span></h2></div>
             <div class="contact-links">
-                <a href="mailto:Ch4120N@Proton.me" class="contact-card">
-                    <div class="contact-icon">📧</div>
-                    <h3>Email</h3>
-                    <p>Ch4120N@Proton.me</p>
-                </a>
-                <a href="https://github.com/Ch4120N" target="_blank" class="contact-card">
-                    <div class="contact-icon">💻</div>
-                    <h3>GitHub</h3>
-                    <p>@Ch4120N</p>
-                </a>
-                <a href="https://t.me/Ch4120N" target="_blank" class="contact-card">
-                    <div class="contact-icon">✈️</div>
-                    <h3>Telegram</h3>
-                    <p>@Ch4120N</p>
-                </a>
-                <a href="https://t.me/Ch4120N_HackerZone" target="_blank" class="contact-card">
-                    <div class="contact-icon">📢</div>
-                    <h3>Telegram Channel</h3>
-                    <p>@Ch4120N_HackerZone</p>
-                </a>
+                <a href="mailto:Ch4120N@Proton.me" class="contact-card"><div class="contact-icon"><i class="fas fa-envelope"></i></div><h3>Email</h3><p>Ch4120N@Proton.me</p></a>
+                <a href="https://github.com/Ch4120N" target="_blank" class="contact-card"><div class="contact-icon"><i class="fab fa-github"></i></div><h3>GitHub</h3><p>@Ch4120N</p></a>
+                <a href="https://t.me/Ch4120N" target="_blank" class="contact-card"><div class="contact-icon"><i class="fab fa-telegram"></i></div><h3>Telegram</h3><p>@Ch4120N</p></a>
+                <a href="https://t.me/Ch4120N_HackerZone" target="_blank" class="contact-card"><div class="contact-icon"><i class="fas fa-bullhorn"></i></div><h3>Channel</h3><p>@Ch4120N_HackerZone</p></a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Ch4120N. All rights reserved. | Built with ❤️ and ☕</p>
+            <div class="footer-ethics">
+                <p><i class="fas fa-balance-scale"></i> <strong>License:</strong> Apache v2/GPLv3/CGBL | <strong>Ethics:</strong> Tools are for authorized penetration testing, security research, and educational purposes only.</p>
+            </div>
+            <p>&copy; 2026 Ch4120N. All rights reserved. | Built with <i class="fas fa-heart" style="color:var(--accent)"></i> and <i class="fas fa-mug-hot" style="color:var(--accent)"></i></p>
         </div>
     </footer>
 
-    <!-- JS Modules -->
     <script src="js/data.js"></script>
     <script src="js/cursor.js"></script>
     <script src="js/theme.js"></script>
     <script src="js/terminal.js"></script>
     <script src="js/main.js"></script>
-
 </body>
 </html>
