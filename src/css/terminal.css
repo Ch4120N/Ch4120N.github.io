@@ -12,3 +12,5 @@
 .btn-close { background-color: #ff5f56; }
 .btn-minimize { background-color: #ffbd2e; }
 .btn-maximize { background-color: #27c93f; }
+.terminal-title { flex: 1; text-align: center; color: var(--text-secondary); font-size: 0.9rem; }
+.terminal-header-right { width: 54px; }
