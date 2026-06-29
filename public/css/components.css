@@ -88,6 +88,8 @@
 
 /* Footer */
 .footer { padding: 30px 0; text-align: center; background-color: var(--bg-tertiary); color: var(--text-secondary); border-top: 1px solid var(--border-color); }
+.footer-ethics { margin-bottom: 20px; font-size: 0.9rem; color: var(--text-secondary); max-width: 800px; margin-left: auto; margin-right: auto; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.footer-ethics i { color: var(--accent); }
 
 /* Progress Bars Section */
 .progress-section { padding: 100px 0; background-color: var(--bg-primary); }
