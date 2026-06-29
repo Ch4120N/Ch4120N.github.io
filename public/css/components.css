@@ -230,3 +230,13 @@
 .cert-badges { display: flex; flex-direction: column; gap: 10px; }
 .badge { background-color: var(--bg-secondary); color: var(--text-primary); padding: 8px 15px; border-radius: 8px; font-size: 0.9rem; font-weight: 500; border: 1px solid var(--border-color); transition: var(--transition); }
 .cert-card:hover .badge { border-color: var(--accent); color: var(--accent); }
+
+/* Learning */
+.learning-section { padding: 100px 0; background-color: var(--bg-primary); }
+.learning-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+.learning-card {
+    background-color: var(--bg-secondary); padding: 20px 30px; border-radius: 50px; border: 1px solid var(--border-color);
+    font-size: 1.1rem; font-weight: 500; transition: var(--transition); display: flex; align-items: center; gap: 10px;
+}
+.learning-card i { color: var(--accent); }
+.learning-card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(255,0,0,0.1); }
