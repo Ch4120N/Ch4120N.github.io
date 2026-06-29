@@ -40,4 +40,10 @@ Ch4120N - A passionate security-driven technologist specializing in ethical hack
         "🤖 Custom Security Tools & Bot Development",
         "🛠️ Technical Consulting & Security Mentoring"
     ],
+    ascii: `
+  ___  _   _  __  __  ___   ___  _  _ 
+ / __)( )_( )/. |/  )(__ \\ / _ \\( \\( )
+( (__  ) _ ((_  _))(  / _/( (_) ))  ( 
+ \\___)(_) (_) (_)(__)(____)\\___/(_)\\_)
+    `
 };
