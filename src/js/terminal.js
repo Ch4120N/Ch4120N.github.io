@@ -4,4 +4,8 @@
     const bodyEl = document.getElementById('terminal-body');
     const termWindow = document.getElementById('terminal-window');
 
+    let commandHistory = [];
+    let historyIndex = -1;
+
+    
 })();
