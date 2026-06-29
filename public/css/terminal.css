@@ -54,3 +54,14 @@
 .terminal-output .output-text .link { color: #58a6ff; text-decoration: underline; }
 [data-theme="light"] .terminal-output .output-text .link { color: #0969da; }
 .terminal-output .ascii-art { color: var(--accent); line-height: 1.2; font-size: 0.8rem; margin-bottom: 20px; display: block; }
+
+/* Quick Commands UI */
+.terminal-quick-cmds {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; justify-content: center;
+}
+.quick-cmd-btn {
+    background-color: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-color);
+    padding: 8px 16px; border-radius: 20px; font-family: 'Fira Code', monospace; font-size: 0.85rem;
+    transition: var(--transition); cursor: none; 
+}
+.quick-cmd-btn:hover { background-color: var(--accent); color: #fff; border-color: var(--accent); transform: translateY(-2px); }
