@@ -51,6 +51,13 @@
 
 .hero-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
 
+/* Hero Image */
+.hero-container { display: flex; align-items: center; justify-content: space-between; gap: 50px; position: relative; z-index: 2; }
+.hero-content { flex: 1; text-align: left; }
+.hero-image { flex: 1; display: flex; justify-content: center; align-items: center; }
+.hero-gif { max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 20px 50px rgba(255,0,0,0.2); border: 2px solid var(--border-color); }
+@media (max-width: 900px) { .hero-container { flex-direction: column; text-align: center; } .hero-content { text-align: center; } }
+
 /* Buttons */
 .btn { padding: 12px 30px; border-radius: 8px; font-weight: 600; font-size: 1rem; transition: var(--transition); display: inline-block; }
 .btn-primary { background-color: var(--accent); color: #fff; }
