@@ -251,6 +251,14 @@
 .badge { background-color: var(--bg-secondary); color: var(--text-primary); padding: 8px 15px; border-radius: 8px; font-size: 0.9rem; font-weight: 500; border: 1px solid var(--border-color); transition: var(--transition); }
 .cert-card:hover .badge { border-color: var(--accent); color: var(--accent); }
 
+/* Certifications Timeline Status */
+.timeline-status { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 10px; }
+.timeline-status.in-progress { background-color: rgba(255, 165, 0, 0.2); color: orange; border: 1px solid orange; }
+.timeline-status.completed { background-color: rgba(0, 255, 0, 0.2); color: #00ff00; border: 1px solid #00ff00; }
+.timeline-status.certified { background-color: rgba(255, 0, 0, 0.2); color: var(--accent); border: 1px solid var(--accent); }
+.cert-progress { width: 100%; height: 4px; background: var(--bg-tertiary); border-radius: 2px; margin-top: 15px; overflow: hidden; }
+.cert-progress-fill { height: 100%; background: var(--accent); transition: width 1s ease; }
+
 /* Learning */
 .learning-section { padding: 100px 0; background-color: var(--bg-primary); }
 .learning-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
