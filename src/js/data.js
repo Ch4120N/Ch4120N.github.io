@@ -29,5 +29,9 @@ Ch4120N - A passionate security-driven technologist specializing in ethical hack
         "🛡️ Ethical Hacking: CEH (Certified)",
         "🎮 CTF & Competitions: HackTheBox (Pro Hacker), CTF (Top 10%), TryHackMe (Active)"
     ],
-    
+    contact: {
+        email: "Ch4120N@Proton.me",
+        github: "https://github.com/Ch4120N",
+        telegram: "https://t.me/Ch4120N"
+    },
 };
