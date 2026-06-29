@@ -67,3 +67,7 @@
 .scroll-arrow { width: 20px; height: 20px; border-right: 2px solid var(--text-secondary); border-bottom: 2px solid var(--text-secondary); transform: rotate(45deg); margin-top: 10px; }
 
 @keyframes float { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(10px); } }
+
+/* Terminal Section */
+.terminal-section { padding: 100px 0; }
+
