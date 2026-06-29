@@ -49,3 +49,4 @@
 .cursor-blink { animation: blink 1s infinite; }
 .hero-description { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
 
+.hero-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
