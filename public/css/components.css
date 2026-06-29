@@ -215,10 +215,7 @@
 /* Services */
 .services-section { padding: 100px 0; background-color: var(--bg-primary); }
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-.service-card {
-    background-color: var(--bg-secondary); padding: 40px 30px; border-radius: 20px; border: 1px solid var(--border-color);
-    transition: var(--transition); text-align: center; position: relative; overflow: hidden;
-}
+.service-card { background-color: var(--bg-secondary); padding: 40px 30px; border-radius: 20px; border: 1px solid var(--border-color); transition: var(--transition); text-align: center; position: relative; overflow: hidden; }
 .service-card:hover { transform: translateY(-10px); border-color: var(--accent); box-shadow: 0 15px 30px rgba(255,0,0,0.15); }
 .service-icon { font-size: 3rem; color: var(--accent); margin-bottom: 25px; transition: var(--transition); }
 .service-card:hover .service-icon { transform: scale(1.2) rotate(5deg); }
