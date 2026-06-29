@@ -34,4 +34,10 @@ Ch4120N - A passionate security-driven technologist specializing in ethical hack
         github: "https://github.com/Ch4120N",
         telegram: "https://t.me/Ch4120N"
     },
+    services: [
+        "🔒 Penetration Testing & Vulnerability Assessment",
+        "⚡ Linux Server Automation & System Hardening",
+        "🤖 Custom Security Tools & Bot Development",
+        "🛠️ Technical Consulting & Security Mentoring"
+    ],
 };
