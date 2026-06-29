@@ -125,3 +125,37 @@
     .timeline-item.right { left: 0; }
     .timeline-item.left::after, .timeline-item.right::after { left: 10px; }
 }
+
+/* Skills & Tech Stack */
+.skills-section { padding: 100px 0; background-color: var(--bg-primary); }
+.skill-category h3 { font-size: 1.3rem; margin-bottom: 25px; color: var(--accent); border-bottom: 1px solid var(--border-color); padding-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+.skill-category h3 i { font-size: 1.1rem; }
+.skill-item .skill-name { display: flex; align-items: center; gap: 10px; }
+.skill-item .skill-name i { font-size: 1.2rem; }
+
+.tech-stack-wrapper { margin-top: 60px; background-color: var(--bg-secondary); padding: 50px; border-radius: 20px; border: 1px solid var(--border-color); box-shadow: var(--shadow); }
+.tech-stack-title { font-size: 2rem; margin-bottom: 40px; text-align: center; color: var(--accent); display: flex; align-items: center; justify-content: center; gap: 15px; }
+.tech-categories { display: flex; flex-direction: column; gap: 40px; }
+.tech-category h4 { font-size: 1.2rem; color: var(--text-primary); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+.tech-category h4 i { color: var(--accent); }
+
+.tech-grid { display: flex; flex-wrap: wrap; gap: 15px; }
+.tech-item {
+    width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;
+    background-color: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 12px;
+    font-size: 2.2rem; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative; cursor: none;
+}
+.tech-item:hover {
+    transform: translateY(-8px) scale(1.1);
+    border-color: var(--accent);
+    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.15);
+    z-index: 10;
+}
+.tech-item::after {
+    content: attr(title); position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);
+    background-color: var(--bg-tertiary); color: var(--text-primary); padding: 4px 8px; border-radius: 4px;
+    font-size: 0.8rem; font-family: 'Inter', sans-serif; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.2s;
+    border: 1px solid var(--border-color);
+}
+.tech-item:hover::after { opacity: 1; }
