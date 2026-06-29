@@ -9,3 +9,6 @@
 }
 .terminal-buttons { display: flex; gap: 8px; }
 .terminal-buttons span { width: 12px; height: 12px; border-radius: 50%; display: block; }
+.btn-close { background-color: #ff5f56; }
+.btn-minimize { background-color: #ffbd2e; }
+.btn-maximize { background-color: #27c93f; }
