@@ -146,5 +146,24 @@ Only Ch4120N has root access to this system.
         }
     }
 
+    inputEl.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            const value = inputEl.value;
+            if (value.trim()) {
+                commandHistory.push(value);
+                historyIndex = commandHistory.length;
+            }
+            processCommand(value);
+            inputEl.value = '';
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            if (historyIndex > 0) { historyIndex--; inputEl.value = commandHistory[historyIndex]; }
+        } else if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            if (historyIndex < commandHistory.length - 1) { historyIndex++; inputEl.value = commandHistory[historyIndex]; }
+            else { historyIndex = commandHistory.length; inputEl.value = ''; }
+        }
+    });
+
     
 })();
