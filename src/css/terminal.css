@@ -22,3 +22,6 @@
 .terminal-body::-webkit-scrollbar { width: 8px; }
 .terminal-body::-webkit-scrollbar-track { background: var(--terminal-bg); }
 .terminal-body::-webkit-scrollbar-thumb { background-color: var(--border-color); border-radius: 4px; }
+
+.terminal-output { white-space: pre-wrap; word-break: break-word; }
+.terminal-input-line { display: flex; align-items: center; margin-top: 10px; }
