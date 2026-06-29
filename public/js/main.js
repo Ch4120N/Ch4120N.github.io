@@ -46,4 +46,18 @@
 
     setTimeout(typeEffect, 1000);
     
+    // Animate Progress Bars on Scroll
+    const skillItems = document.querySelectorAll('.skill-item');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const fill = entry.target.querySelector('.progress-bar-fill');
+                const progress = entry.target.getAttribute('data-progress');
+                fill.style.width = `${progress}%`;
+                observer.unobserve(entry.target); // Animate only once
+            }
+        });
+    }, { threshold: 0.5 });
+
+    skillItems.forEach(item => observer.observe(item));
 })();
