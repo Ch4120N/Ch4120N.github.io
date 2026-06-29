@@ -25,3 +25,5 @@
 
 .terminal-output { white-space: pre-wrap; word-break: break-word; }
 .terminal-input-line { display: flex; align-items: center; margin-top: 10px; }
+
+.prompt { color: var(--terminal-prompt); margin-right: 10px; white-space: nowrap; user-select: none; }
