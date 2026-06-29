@@ -29,5 +29,12 @@
     
     animateOutline();
 
+    // Add hover effect to interactive elements
+    const interactives = document.querySelectorAll('a, button, input, .contact-card');
+    interactives.forEach(el => {
+        el.addEventListener('mouseenter', () => outline.classList.add('hover'));
+        el.addEventListener('mouseleave', () => outline.classList.remove('hover'));
+    });
+
     
 })();
