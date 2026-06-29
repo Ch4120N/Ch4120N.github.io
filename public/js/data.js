@@ -35,6 +35,16 @@ Ch4120N - A passionate security-driven technologist specializing in ethical hack
         telegram: "https://t.me/Ch4120N",
         channel: "https://t.me/Ch4120N_HackerZone"
     },
+    mastery: [
+        { name: "Python & Automation", level: 95 },
+        { name: "Linux Admin", level: 90 },
+        { name: "Pen Testing", level: 88 },
+        { name: "Web Exploitation", level: 90 },
+        { name: "Network Security", level: 85 },
+        { name: "Reverse Engineering", level: 75 },
+        { name: "C/C++", level: 80 },
+        { name: "Go", level: 70 }
+    ],
     services: [
         "🔒 Penetration Testing & Vulnerability Assessment",
         "⚡ Linux Server Automation & System Hardening",
