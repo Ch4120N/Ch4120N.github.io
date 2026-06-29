@@ -11,3 +11,11 @@
 .logo-accent { color: var(--accent); animation: blink 1s infinite; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
+.nav { display: flex; gap: 30px; }
+.nav-link { font-weight: 500; color: var(--text-secondary); position: relative; }
+.nav-link:hover { color: var(--accent); }
+.nav-link::after {
+    content: ''; position: absolute; bottom: -5px; left: 0;
+    width: 0; height: 2px; background-color: var(--accent); transition: var(--transition);
+}
+.nav-link:hover::after { width: 100%; }
