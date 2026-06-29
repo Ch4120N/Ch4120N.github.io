@@ -50,3 +50,10 @@
 .hero-description { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
 
 .hero-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+
+/* Buttons */
+.btn { padding: 12px 30px; border-radius: 8px; font-weight: 600; font-size: 1rem; transition: var(--transition); display: inline-block; }
+.btn-primary { background-color: var(--accent); color: #fff; }
+.btn-primary:hover { background-color: var(--accent-secondary); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2); }
+.btn-secondary { background-color: transparent; border: 2px solid var(--accent); color: var(--accent); }
+.btn-secondary:hover { background-color: var(--accent); color: #fff; transform: translateY(-3px); }
