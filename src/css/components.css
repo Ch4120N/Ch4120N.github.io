@@ -7,3 +7,5 @@
 }
 .header.scrolled { padding: 15px 0; border-bottom-color: var(--border-color); }
 .header-container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-family: 'Fira Code', monospace; font-size: 1.5rem; font-weight: 600; color: var(--text-primary); }
+.logo-accent { color: var(--accent); animation: blink 1s infinite; }
