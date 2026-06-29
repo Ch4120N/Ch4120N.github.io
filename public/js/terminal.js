@@ -31,10 +31,16 @@
     function scrollToBottom() { bodyEl.scrollTop = bodyEl.scrollHeight; }
     function clearTerminal() { outputEl.innerHTML = ''; }
 
+    // Helper for Terminal Progress Bars
+    function generateTermProgressBar(percent) {
+        return `<span class="term-progress-container"><span class="term-progress-fill" style="width: ${percent}%"></span></span> <span class="highlight">${percent}%</span>`;
+    }
+
     function showWelcome() {
         const welcomeMsg = `
 Welcome to Ch4120N's Interactive Resume! 🚀
-Type <span class="highlight">help</span> to see available commands.
+Type <span class="highlight">help</span> to see commands, or use the buttons above.
+Press <span class="highlight">TAB</span> for auto-completion!
         `;
         printToTerminal(welcomeMsg.trim());
     }
@@ -53,7 +59,9 @@ Type <span class="highlight">help</span> to see available commands.
 <span class="highlight">Available Commands:</span>
   <span class="highlight">about</span>        - Learn about me
   <span class="highlight">skills</span>       - View my technical skills
+  <span class="highlight">mastery</span>      - View my proficiency levels (with progress bars)
   <span class="highlight">projects</span>     - See my featured projects
+  <span class="highlight">experience</span>   - View my professional journey
   <span class="highlight">certifications</span> - View my certifications
   <span class="highlight">services</span>     - See what I can do for you
   <span class="highlight">contact</span>      - Get my contact information
@@ -74,6 +82,23 @@ Type <span class="highlight">help</span> to see available commands.
                     skillsHtml += `<span class="highlight">${category}</span>\n  ${skills.join(', ')}\n\n`;
                 }
                 printToTerminal(skillsHtml.trim());
+                break;
+
+            case 'mastery':
+                let masteryHtml = '<span class="highlight">📊 Technical Mastery:</span>\n\n';
+                RESUME_DATA.mastery.forEach(m => {
+                    // padEnd works perfectly because terminal uses monospace font
+                    masteryHtml += `${m.name.padEnd(25)} ${generateTermProgressBar(m.level)}\n`;
+                });
+                printToTerminal(masteryHtml.trim());
+                break;
+
+            case 'experience':
+                let expHtml = '<span class="highlight">💼 Professional Journey:</span>\n\n';
+                RESUME_DATA.experience.forEach(e => {
+                    expHtml += `<span class="highlight">${e.year}</span> | <span class="highlight">${e.role}</span>\n  ${e.desc}\n\n`;
+                });
+                printToTerminal(expHtml.trim());
                 break;
 
             case 'projects':
@@ -103,6 +128,7 @@ Type <span class="highlight">help</span> to see available commands.
   📧 Email:    <a href="mailto:${RESUME_DATA.contact.email}" class="link">${RESUME_DATA.contact.email}</a>
   💻 GitHub:   <a href="${RESUME_DATA.contact.github}" target="_blank" class="link">${RESUME_DATA.contact.github}</a>
   ✈️ Telegram: <a href="${RESUME_DATA.contact.telegram}" target="_blank" class="link">${RESUME_DATA.contact.telegram}</a>
+  📢 Channel:  <a href="${RESUME_DATA.contact.channel}" target="_blank" class="link">${RESUME_DATA.contact.channel}</a>
                 `);
                 break;
 
@@ -146,7 +172,41 @@ Only Ch4120N has root access to this system.
         }
     }
 
+    // Quick Commands UI Logic
+    document.querySelectorAll('.quick-cmd-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            processCommand(btn.dataset.cmd);
+            inputEl.focus();
+        });
+    });
+
     inputEl.addEventListener('keydown', (e) => {
+        // TAB COMPLETION LOGIC
+        if (e.key === 'Tab') {
+            e.preventDefault();
+            const input = inputEl.value;
+            const parts = input.split(' ');
+            const lastWord = parts[parts.length - 1].toLowerCase();
+            
+            let matches = [];
+            // If typing the first word, match commands
+            if (parts.length === 1 || (parts.length === 2 && parts[1] === '')) {
+                matches = RESUME_DATA.commands.filter(cmd => cmd.startsWith(lastWord));
+            } 
+            // If typing 'theme', match arguments
+            else if (parts[0].toLowerCase() === 'theme') {
+                matches = ['dark', 'light'].filter(t => t.startsWith(lastWord));
+            }
+
+            if (matches.length === 1) {
+                parts[parts.length - 1] = matches[0];
+                inputEl.value = parts.join(' ') + (parts.length === 1 ? ' ' : '');
+            } else if (matches.length > 1) {
+                printToTerminal(`Suggestions: <span class="highlight">${matches.join(', ')}</span>`);
+            }
+            return;
+        }
+
         if (e.key === 'Enter') {
             const value = inputEl.value;
             if (value.trim()) {
