@@ -10,3 +10,8 @@ body {
     transition: var(--transition);
 }
 
+/* Hide default cursor on desktop */
+@media (pointer: fine) {
+    body, a, button, input, .terminal-input { cursor: none; }
+}
+
