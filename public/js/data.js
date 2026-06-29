@@ -32,7 +32,8 @@ Ch4120N - A passionate security-driven technologist specializing in ethical hack
     contact: {
         email: "Ch4120N@Proton.me",
         github: "https://github.com/Ch4120N",
-        telegram: "https://t.me/Ch4120N"
+        telegram: "https://t.me/Ch4120N",
+        channel: "https://t.me/Ch4120N_HackerZone"
     },
     services: [
         "🔒 Penetration Testing & Vulnerability Assessment",
