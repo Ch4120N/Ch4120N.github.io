@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="css/cursor.css">
     <link rel="stylesheet" href="css/responsive.css">
     
-    <!-- Professional Icons CDNs -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     
@@ -25,6 +24,7 @@
 <body>
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
+    <button id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
     <header class="header" id="header">
         <div class="container header-container">
@@ -44,8 +44,14 @@
     </header>
 
     <section class="hero" id="hero">
+        <canvas id="hero-particles"></canvas>
         <div class="container hero-container">
             <div class="hero-content">
+                <div class="system-status">
+                    <div class="status-item"><span class="status-dot online"></span> Status: Online</div>
+                    <div class="status-item"><i class="fas fa-map-marker-alt"></i> Location: Earth</div>
+                    <div class="status-item"><i class="fas fa-briefcase"></i> Available: Yes</div>
+                </div>
                 <p class="hero-greeting">Hello, World! I'm</p>
                 <h1 class="hero-title">Ch4120N</h1>
                 <h2 class="hero-subtitle"><span class="typed-text"></span><span class="cursor-blink">&nbsp;</span></h2>
@@ -54,6 +60,10 @@
                     <a href="#terminal-section" class="btn btn-primary"><i class="fas fa-terminal"></i> Open Terminal</a>
                     <a href="https://github.com/Ch4120N" target="_blank" class="btn btn-secondary"><i class="fab fa-github"></i> GitHub Profile</a>
                 </div>
+            </div>
+            <div class="hero-image">
+                <!-- Replace with your own GIF path if needed, e.g., ./images/hero.gif -->
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWJ1dGh0b2JyYXZtcnI3ZGJ1eXJ1dGh0b2JyYXZtcnI3ZGJ1eSZjdD1n/2IudUHdI075HL02Pkk/giphy.gif" alt="Cybersecurity Animation" class="hero-gif">
             </div>
         </div>
     </section>
@@ -69,7 +79,6 @@
                 <button class="quick-cmd-btn" data-cmd="about">about</button>
                 <button class="quick-cmd-btn" data-cmd="skills">skills</button>
                 <button class="quick-cmd-btn" data-cmd="repos">repos</button>
-                <button class="quick-cmd-btn" data-cmd="stats">stats</button>
                 <button class="quick-cmd-btn" data-cmd="services">services</button>
                 <button class="quick-cmd-btn" data-cmd="contact">contact</button>
                 <button class="quick-cmd-btn" data-cmd="clear">clear</button>
@@ -82,9 +91,12 @@
                 </div>
                 <div class="terminal-body" id="terminal-body">
                     <div class="terminal-output" id="terminal-output"></div>
-                    <div class="terminal-input-line">
-                        <span class="prompt">guest@ch4120n-resume:~$</span>
-                        <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false">
+                    <div class="terminal-prompt-multi">
+                        <div class="prompt-line-1">┌──(guest㉿ch4120n-resume)-[~]</div>
+                        <div class="terminal-input-line">
+                            <span class="prompt-line-2">└─$</span>
+                            <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -115,12 +127,12 @@
                 <h3 class="tech-stack-title"><i class="fas fa-layer-group"></i> Full Tech Stack</h3>
                 <div class="tech-categories">
                     <div class="tech-category">
-                        <h4><i class="fas fa-code"></i> Programming Languages</h4>
+                        <div class="tech-category-header"><h4><i class="fas fa-code"></i> Programming Languages</h4><span class="tech-mastery">95%</span></div>
+                        <div class="tech-progress-container"><div class="tech-progress-fill" data-width="95"></div></div>
                         <div class="tech-grid">
                             <div class="tech-item" title="Python"><i class="devicon-python-plain colored"></i></div>
                             <div class="tech-item" title="C"><i class="devicon-c-plain colored"></i></div>
                             <div class="tech-item" title="C++"><i class="devicon-cplusplus-plain colored"></i></div>
-                            <div class="tech-item" title="C#"><i class="devicon-csharp-plain colored"></i></div>
                             <div class="tech-item" title="Go"><i class="devicon-go-plain colored"></i></div>
                             <div class="tech-item" title="Java"><i class="devicon-java-plain colored"></i></div>
                             <div class="tech-item" title="JavaScript"><i class="devicon-javascript-plain colored"></i></div>
@@ -134,7 +146,8 @@
                         </div>
                     </div>
                     <div class="tech-category">
-                        <h4><i class="fas fa-cubes"></i> Frameworks & Libraries</h4>
+                        <div class="tech-category-header"><h4><i class="fas fa-cubes"></i> Frameworks & Libraries</h4><span class="tech-mastery">85%</span></div>
+                        <div class="tech-progress-container"><div class="tech-progress-fill" data-width="85"></div></div>
                         <div class="tech-grid">
                             <div class="tech-item" title="React"><i class="devicon-react-original colored"></i></div>
                             <div class="tech-item" title="Next.js"><i class="devicon-nextjs-line colored"></i></div>
@@ -142,14 +155,13 @@
                             <div class="tech-item" title="Django"><i class="devicon-django-plain colored"></i></div>
                             <div class="tech-item" title="Flask"><i class="devicon-flask-plain-wordmark colored"></i></div>
                             <div class="tech-item" title="Laravel"><i class="devicon-laravel-plain colored"></i></div>
-                            <div class="tech-item" title="jQuery"><i class="devicon-jquery-plain-wordmark colored"></i></div>
-                            <div class="tech-item" title="Bootstrap"><i class="devicon-bootstrap-plain-wordmark colored"></i></div>
                             <div class="tech-item" title="Tailwind CSS"><i class="devicon-tailwindcss-plain colored"></i></div>
                             <div class="tech-item" title=".NET"><i class="devicon-dotnet-plain-wordmark colored"></i></div>
                         </div>
                     </div>
                     <div class="tech-category">
-                        <h4><i class="fas fa-database"></i> Databases & DevOps</h4>
+                        <div class="tech-category-header"><h4><i class="fas fa-database"></i> Databases & DevOps</h4><span class="tech-mastery">80%</span></div>
+                        <div class="tech-progress-container"><div class="tech-progress-fill" data-width="80"></div></div>
                         <div class="tech-grid">
                             <div class="tech-item" title="MySQL"><i class="devicon-mysql-plain-wordmark colored"></i></div>
                             <div class="tech-item" title="PostgreSQL"><i class="devicon-postgresql-plain colored"></i></div>
@@ -162,7 +174,8 @@
                         </div>
                     </div>
                     <div class="tech-category">
-                        <h4><i class="fas fa-tools"></i> Tools & Operating Systems</h4>
+                        <div class="tech-category-header"><h4><i class="fas fa-tools"></i> Tools & Operating Systems</h4><span class="tech-mastery">90%</span></div>
+                        <div class="tech-progress-container"><div class="tech-progress-fill" data-width="90"></div></div>
                         <div class="tech-grid">
                             <div class="tech-item" title="VS Code"><i class="devicon-vscode-plain-wordmark colored"></i></div>
                             <div class="tech-item" title="Vim"><i class="devicon-vim-plain colored"></i></div>
@@ -217,39 +230,43 @@
         </div>
     </section>
 
-    <section class="github-stats-section" id="github-stats">
-        <div class="container">
-            <div class="section-header"><h2 class="section-title">GitHub <span class="text-accent">Statistics</span></h2></div>
-            <div class="stats-grid">
-                <!-- FIXED URLS: Using demolab.com for streak, and raw.githubusercontent.com for snake -->
-                <img src="https://streak-stats.demolab.com/?user=Ch4120N&theme=dark&hide_border=true&border_radius=15&ring=FF0000&fire=FF0000&currStreakLabel=FF0000&sideLabels=FF0000&sideNums=FFFFFF&dates=FFFFFF&background=0D1117" alt="Streak" class="stats-img github-img" />
-                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ch4120N&theme=radical&hide_border=true&layout=compact&langs_count=8&bg_color=0D1117&title_color=FF0000&text_color=FFFFFF&border_color=FF0000&border_radius=15" alt="Langs" class="stats-img github-img" />
-                <img src="https://github-readme-stats.vercel.app/api?username=Ch4120N&theme=radical&hide_border=true&show_icons=true&include_all_commits=true&count_private=true&bg_color=0D1117&title_color=FF0000&text_color=FFFFFF&icon_color=FF0000&border_color=FF0000&border_radius=15" alt="Stats" class="stats-img full-width github-img" />
-                <img src="https://github-profile-trophy.vercel.app/?username=Ch4120N&theme=radical&no-frame=true&no-bg=true&column=7&margin-w=15&margin-h=15" alt="Trophies" class="stats-img full-width github-img" />
-                <img src="https://raw.githubusercontent.com/Ch4120N/Ch4120N/main/dist/github-contribution-grid-snake.svg" alt="Snake" class="stats-img full-width github-img" />
-            </div>
-        </div>
-    </section>
-
-    <section class="services-section" id="services">
-        <div class="container">
-            <div class="section-header"><h2 class="section-title">Services & <span class="text-accent">Expertise</span></h2></div>
-            <div class="services-grid">
-                <div class="service-card"><div class="service-icon"><i class="fas fa-shield-halved"></i></div><h3>Cybersecurity</h3><ul><li>Penetration Testing</li><li>Vulnerability Assessment</li><li>Security Audits</li><li>Ethical Hacking</li><li>Bug Bounty Hunting</li></ul></div>
-                <div class="service-card"><div class="service-icon"><i class="fas fa-bolt"></i></div><h3>Automation</h3><ul><li>Linux Server Automation</li><li>System Hardening</li><li>Infrastructure Security</li><li>DevOps Solutions</li><li>CI/CD Pipelines</li></ul></div>
-                <div class="service-card"><div class="service-icon"><i class="fas fa-robot"></i></div><h3>Development</h3><ul><li>Custom Security Tools</li><li>Telegram Bots</li><li>API Integrations</li><li>Open Source Projects</li><li>Full-Stack Development</li></ul></div>
-                <div class="service-card"><div class="service-icon"><i class="fas fa-handshake"></i></div><h3>Consulting</h3><ul><li>Code Review</li><li>Technical Consulting</li><li>Security Mentoring</li><li>Troubleshooting</li><li>Project Management</li></ul></div>
-            </div>
-        </div>
-    </section>
-
     <section class="certifications-section" id="certifications">
         <div class="container">
             <div class="section-header"><h2 class="section-title">Certifications & <span class="text-accent">Achievements</span></h2></div>
-            <div class="certs-grid">
-                <div class="cert-card"><div class="cert-icon"><i class="fas fa-flask"></i></div><h3>Offensive Security</h3><div class="cert-badges"><span class="badge">OSCP (In Progress)</span><span class="badge">PWK (Complete)</span></div></div>
-                <div class="cert-card"><div class="cert-icon"><i class="fas fa-user-secret"></i></div><h3>Ethical Hacking</h3><div class="cert-badges"><span class="badge">CEH Certified</span></div></div>
-                <div class="cert-card"><div class="cert-icon"><i class="fas fa-trophy"></i></div><h3>CTF & Competitions</h3><div class="cert-badges"><span class="badge">HTB Pro Hacker</span><span class="badge">Top 10% CTF</span><span class="badge">THM Active</span></div></div>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-status in-progress">In Progress</div>
+                        <div class="timeline-year">2024</div>
+                        <h3 class="timeline-role"><i class="fas fa-flask"></i> OSCP</h3>
+                        <p class="timeline-desc">Offensive Security Certified Professional. Currently studying and preparing for the exam.</p>
+                        <div class="cert-progress"><div class="cert-progress-fill" style="width: 60%"></div></div>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-status completed">Completed</div>
+                        <div class="timeline-year">2023</div>
+                        <h3 class="timeline-role"><i class="fas fa-shield-halved"></i> PWK</h3>
+                        <p class="timeline-desc">Penetration Testing with Kali Linux course completed successfully.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-status certified">Certified</div>
+                        <div class="timeline-year">2022</div>
+                        <h3 class="timeline-role"><i class="fas fa-user-secret"></i> CEH</h3>
+                        <p class="timeline-desc">Certified Ethical Hacker by EC-Council.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-status completed">Pro Hacker</div>
+                        <div class="timeline-year">Ongoing</div>
+                        <h3 class="timeline-role"><i class="fas fa-trophy"></i> HackTheBox</h3>
+                        <p class="timeline-desc">Achieved Pro Hacker rank. Active CTF player and top 10% globally.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -258,11 +275,31 @@
         <div class="container">
             <div class="section-header"><h2 class="section-title">Currently <span class="text-accent">Learning</span></h2></div>
             <div class="learning-grid">
-                <div class="learning-card"><i class="fas fa-flask"></i> OSCP (Studying)</div>
-                <div class="learning-card"><i class="fas fa-brain"></i> AI & ML (Exploring)</div>
-                <div class="learning-card"><i class="fas fa-cloud"></i> Cloud Security (Learning)</div>
-                <div class="learning-card"><i class="fas fa-dharmachakra"></i> Kubernetes (Mastering)</div>
-                <div class="learning-card"><i class="fas fa-link"></i> Blockchain (Exploring)</div>
+                <div class="learning-card">
+                    <div class="learning-header"><span><i class="fas fa-flask"></i> OSCP</span><span class="learning-percent">60%</span></div>
+                    <div class="learning-progress-container"><div class="learning-progress-fill" data-width="60"></div></div>
+                    <p>Studying penetration testing methodologies.</p>
+                </div>
+                <div class="learning-card">
+                    <div class="learning-header"><span><i class="fas fa-brain"></i> AI & ML</span><span class="learning-percent">30%</span></div>
+                    <div class="learning-progress-container"><div class="learning-progress-fill" data-width="30"></div></div>
+                    <p>Exploring AI for cybersecurity automation.</p>
+                </div>
+                <div class="learning-card">
+                    <div class="learning-header"><span><i class="fas fa-cloud"></i> Cloud Security</span><span class="learning-percent">45%</span></div>
+                    <div class="learning-progress-container"><div class="learning-progress-fill" data-width="45"></div></div>
+                    <p>Learning AWS and Azure security architectures.</p>
+                </div>
+                <div class="learning-card">
+                    <div class="learning-header"><span><i class="fas fa-dharmachakra"></i> Kubernetes</span><span class="learning-percent">20%</span></div>
+                    <div class="learning-progress-container"><div class="learning-progress-fill" data-width="20"></div></div>
+                    <p>Mastering container orchestration security.</p>
+                </div>
+                <div class="learning-card">
+                    <div class="learning-header"><span><i class="fas fa-link"></i> Blockchain</span><span class="learning-percent">10%</span></div>
+                    <div class="learning-progress-container"><div class="learning-progress-fill" data-width="10"></div></div>
+                    <p>Exploring smart contract auditing.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -270,11 +307,46 @@
     <section class="goals-section" id="goals">
         <div class="container">
             <div class="section-header"><h2 class="section-title">Goals & <span class="text-accent">Roadmap</span></h2></div>
-            <div class="goals-grid">
-                <div class="goal-card"><div class="goal-icon"><i class="fas fa-rocket"></i></div><h3>Automation Excellence</h3><p>Build comprehensive automation solutions</p></div>
-                <div class="goal-card"><div class="goal-icon"><i class="fas fa-graduation-cap"></i></div><h3>Advanced Security Training</h3><p>Master AI & ML for cybersecurity</p></div>
-                <div class="goal-card"><div class="goal-icon"><i class="fas fa-seedling"></i></div><h3>Community Contribution</h3><p>Mentor and support open-source community</p></div>
-                <div class="goal-card"><div class="goal-icon"><i class="fas fa-mask"></i></div><h3>Privacy-First Development</h3><p>Contribute to privacy-focused tools</p></div>
+            <div class="roadmap-container">
+                <div class="roadmap-line"></div>
+                <div class="roadmap-item">
+                    <div class="roadmap-icon"><i class="fas fa-rocket"></i></div>
+                    <div class="roadmap-content">
+                        <h3>Automation Excellence</h3>
+                        <p>Build comprehensive automation solutions for infrastructure and security testing.</p>
+                    </div>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="roadmap-content">
+                        <h3>Advanced Security Training</h3>
+                        <p>Master AI & ML for cybersecurity and obtain OSCP certification.</p>
+                    </div>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-icon"><i class="fas fa-seedling"></i></div>
+                    <div class="roadmap-content">
+                        <h3>Community Contribution</h3>
+                        <p>Mentor upcoming hackers and support the open-source security community.</p>
+                    </div>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-icon"><i class="fas fa-mask"></i></div>
+                    <div class="roadmap-content">
+                        <h3>Privacy-First Development</h3>
+                        <p>Contribute to privacy-focused tools and secure communication protocols.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quotes-section" id="quotes">
+        <div class="container">
+            <div class="quote-card">
+                <i class="fas fa-quote-left quote-icon"></i>
+                <p id="quote-text" class="quote-text">"The quieter you become, the more you are able to hear."</p>
+                <span id="quote-author" class="quote-author">- Altaïr Ibn-La'Ahad</span>
             </div>
         </div>
     </section>
@@ -323,7 +395,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-ethics">
-                <p><i class="fas fa-balance-scale"></i> <strong>License:</strong> Apache v2/GPLv3/CGBL | <strong>Ethics:</strong> Tools are for authorized penetration testing, security research, and educational purposes only.</p>
+                <p><i class="fas fa-balance-scale"></i> <strong>License:</strong> MIT/CGBL | <strong>Ethics:</strong> Tools are for authorized penetration testing, security research, and educational purposes only.</p>
             </div>
             <p>&copy; 2026 Ch4120N. All rights reserved. | Built with <i class="fas fa-heart" style="color:var(--accent)"></i> and <i class="fas fa-mug-hot" style="color:var(--accent)"></i></p>
         </div>
