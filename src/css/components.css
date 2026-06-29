@@ -9,3 +9,5 @@
 .header-container { display: flex; justify-content: space-between; align-items: center; }
 .logo { font-family: 'Fira Code', monospace; font-size: 1.5rem; font-weight: 600; color: var(--text-primary); }
 .logo-accent { color: var(--accent); animation: blink 1s infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
