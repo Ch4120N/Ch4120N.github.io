@@ -28,5 +28,8 @@
         scrollToBottom();
     }
 
+    function scrollToBottom() { bodyEl.scrollTop = bodyEl.scrollHeight; }
+    function clearTerminal() { outputEl.innerHTML = ''; }
+
     
 })();
