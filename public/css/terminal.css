@@ -65,3 +65,12 @@
     transition: var(--transition); cursor: none; 
 }
 .quick-cmd-btn:hover { background-color: var(--accent); color: #fff; border-color: var(--accent); transform: translateY(-2px); }
+
+/* Terminal Progress Bars */
+.term-progress-container {
+    display: inline-block; width: 150px; height: 12px; background-color: var(--bg-tertiary);
+    border-radius: 3px; overflow: hidden; vertical-align: middle; margin: 0 10px; border: 1px solid var(--border-color);
+}
+.term-progress-fill {
+    height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+}
