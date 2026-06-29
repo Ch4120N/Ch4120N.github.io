@@ -2,11 +2,15 @@
     background-color: var(--terminal-bg); border-radius: 12px;
     box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-color);
     font-family: 'Fira Code', monospace; max-width: 900px; margin: 0 auto;
+    height: 600px; /* FIXED SIZE */
+    display: flex;
+    flex-direction: column;
 }
 .terminal-header {
     background-color: var(--bg-secondary); padding: 12px 15px;
     display: flex; align-items: center; border-bottom: 1px solid var(--border-color);
 }
+
 .terminal-buttons { display: flex; gap: 8px; }
 .terminal-buttons span { width: 12px; height: 12px; border-radius: 50%; display: block; }
 .btn-close { background-color: #ff5f56; }
