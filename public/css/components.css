@@ -282,6 +282,14 @@
 .roadmap-content h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--text-primary); }
 .roadmap-content p { color: var(--text-secondary); }
 
+/* Quotes Section */
+.quotes-section { padding: 100px 0; background-color: var(--bg-primary); text-align: center; }
+.quote-card { max-width: 800px; margin: 0 auto; background: var(--bg-secondary); padding: 50px; border-radius: 20px; border: 1px solid var(--border-color); position: relative; }
+.quote-icon { font-size: 3rem; color: var(--accent); opacity: 0.2; position: absolute; top: 20px; left: 30px; }
+.quote-text { font-size: 1.5rem; font-style: italic; color: var(--text-primary); margin-bottom: 20px; transition: opacity 0.5s; }
+.quote-author { font-family: 'Fira Code', monospace; color: var(--accent); font-weight: 600; transition: opacity 0.5s; }
+
+
 /* Support */
 .support-section { padding: 100px 0; background-color: var(--bg-primary); }
 .support-content { max-width: 800px; margin: 0 auto; }
