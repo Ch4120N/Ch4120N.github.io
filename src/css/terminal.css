@@ -3,3 +3,7 @@
     box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-color);
     font-family: 'Fira Code', monospace; max-width: 900px; margin: 0 auto;
 }
+.terminal-header {
+    background-color: var(--bg-secondary); padding: 12px 15px;
+    display: flex; align-items: center; border-bottom: 1px solid var(--border-color);
+}
