@@ -165,5 +165,7 @@ Only Ch4120N has root access to this system.
         }
     });
 
-    
+    termWindow.addEventListener('click', () => { inputEl.focus(); });
+    showWelcome();
+    inputEl.focus();
 })();
