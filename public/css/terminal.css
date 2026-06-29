@@ -2,15 +2,12 @@
     background-color: var(--terminal-bg); border-radius: 12px;
     box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-color);
     font-family: 'Fira Code', monospace; max-width: 900px; margin: 0 auto;
-    height: 600px; /* FIXED SIZE */
-    display: flex;
-    flex-direction: column;
+    height: 600px; display: flex; flex-direction: column;
 }
 .terminal-header {
     background-color: var(--bg-secondary); padding: 12px 15px;
     display: flex; align-items: center; border-bottom: 1px solid var(--border-color);
 }
-
 .terminal-buttons { display: flex; gap: 8px; }
 .terminal-buttons span { width: 12px; height: 12px; border-radius: 50%; display: block; }
 .btn-close { background-color: #ff5f56; }
@@ -20,40 +17,65 @@
 .terminal-header-right { width: 54px; }
 
 .terminal-body {
-    flex: 1; /* Takes remaining space in fixed height */
-    padding: 20px; 
-    overflow-y: auto; 
-    color: var(--terminal-text); font-size: 0.95rem; line-height: 1.5;
-    /* Themed Scrollbar for Terminal */
-    scrollbar-width: thin;
-    scrollbar-color: var(--terminal-prompt) var(--terminal-bg);
+    flex: 1; padding: 20px; overflow-y: auto; color: var(--terminal-text); 
+    font-size: 0.95rem; line-height: 1.6;
+    scrollbar-width: thin; scrollbar-color: var(--terminal-prompt) var(--terminal-bg);
 }
-
 .terminal-body::-webkit-scrollbar { width: 8px; }
 .terminal-body::-webkit-scrollbar-track { background: var(--terminal-bg); }
-.terminal-body::-webkit-scrollbar-thumb { 
-    background-color: var(--terminal-prompt); 
-    border-radius: 4px; 
-    border: 2px solid var(--terminal-bg); 
-}
+.terminal-body::-webkit-scrollbar-thumb { background-color: var(--terminal-prompt); border-radius: 4px; border: 2px solid var(--terminal-bg); }
 
-.terminal-output { white-space: pre-wrap; word-break: break-word; }
-.terminal-input-line { display: flex; align-items: center; margin-top: 10px; }
+.terminal-output { white-space: pre-wrap; word-break: break-word; margin-bottom: 10px; }
 
-.prompt { color: var(--terminal-prompt); margin-right: 10px; white-space: nowrap; user-select: none; }
+/* --- COLORED PROMPT & BLOCK CURSOR --- */
+.terminal-prompt-multi { font-family: 'Fira Code', monospace; }
+.prompt-line-1 { margin-bottom: 2px; user-select: none; font-size: 0.95rem; }
+.prompt-user { color: #00ff00; font-weight: 600; }
+.prompt-at { color: var(--terminal-text); }
+.prompt-host { color: #00ff00; font-weight: 600; }
+.prompt-path { color: #5c9dff; font-weight: 600; }
+.prompt-symbol { color: #ff0000; }
+.prompt-symbol-root { color: #ff0000; font-weight: bold; }
+
+.terminal-input-line { display: flex; align-items: center; }
+.prompt-line-2 { margin-right: 8px; user-select: none; font-size: 0.95rem; display: flex; align-items: center; }
+.prompt-line-2-wrap { display: flex; align-items: center; }
+
+.cmd-text { margin-left: 8px; white-space: pre-wrap; word-break: break-all; }
+
 .terminal-input {
     background: transparent; border: none; outline: none;
     color: var(--terminal-text); font-family: 'Fira Code', monospace;
-    font-size: 0.95rem; flex: 1; caret-color: var(--accent);
+    font-size: 0.95rem; flex: 1; caret-color: #808080;
+    caret-shape: block;
 }
+.terminal-input:focus + .block-cursor { display: inline-block; }
+@keyframes blink { 50% { opacity: 0; } }
 
-.terminal-output .command-echo { color: var(--terminal-text); }
-.terminal-output .command-echo .prompt-echo { color: var(--terminal-prompt); }
-.terminal-output .output-text { margin-bottom: 15px; color: var(--terminal-text); }
-.terminal-output .output-text .highlight { color: var(--accent); font-weight: 600; }
-.terminal-output .output-text .link { color: #58a6ff; text-decoration: underline; }
-[data-theme="light"] .terminal-output .output-text .link { color: #0969da; }
-.terminal-output .ascii-art { color: var(--accent); line-height: 1.2; font-size: 0.8rem; margin-bottom: 20px; display: block; }
+/* --- BEAUTIFUL TERMINAL OUTPUTS --- */
+.term-box {
+    background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color);
+    border-left: 3px solid var(--accent); padding: 12px 15px; margin: 10px 0; border-radius: 4px;
+}
+.term-table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+.term-table th, .term-table td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border-color); }
+.term-table th { color: var(--accent); font-weight: 600; }
+.term-badge {
+    display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem;
+    background: rgba(255, 0, 0, 0.1); color: var(--accent); border: 1px solid var(--accent); margin: 2px;
+}
+.term-progress-container {
+    display: inline-block; width: 150px; height: 10px; background-color: var(--bg-tertiary);
+    border-radius: 5px; overflow: hidden; vertical-align: middle; margin: 0 10px; border: 1px solid var(--border-color);
+}
+.term-progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-secondary)); }
+
+.command-echo { margin-bottom: 15px; white-space: normal;}
+.output-text { margin-bottom: 15px; }
+.highlight { color: var(--accent); font-weight: 600; }
+.link { color: #58a6ff; text-decoration: underline; cursor: pointer; }
+[data-theme="light"] .link { color: #0969da; }
+.ascii-art { color: var(--accent); line-height: 1.2; font-size: 0.8rem; margin-bottom: 20px; display: block; }
 
 /* Quick Commands UI */
 .terminal-quick-cmds {
@@ -65,18 +87,3 @@
     transition: var(--transition); cursor: none; 
 }
 .quick-cmd-btn:hover { background-color: var(--accent); color: #fff; border-color: var(--accent); transform: translateY(-2px); }
-
-/* Terminal Progress Bars */
-.term-progress-container {
-    display: inline-block; width: 150px; height: 12px; background-color: var(--bg-tertiary);
-    border-radius: 3px; overflow: hidden; vertical-align: middle; margin: 0 10px; border: 1px solid var(--border-color);
-}
-.term-progress-fill {
-    height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
-}
-
-/* Multi-line Terminal Prompt */
-.terminal-prompt-multi { font-family: 'Fira Code', monospace; }
-.prompt-line-1 { color: var(--terminal-prompt); margin-bottom: 2px; user-select: none; font-size: 0.95rem; }
-.prompt-line-2 { color: var(--terminal-prompt); margin-right: 10px; user-select: none; font-size: 0.95rem; }
-.terminal-input-line { display: flex; align-items: center; }
