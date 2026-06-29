@@ -50,6 +50,11 @@ Ch4120N - A passionate security-driven technologist specializing in ethical hack
         { year: "2021 - 2023", role: "Open Source Security Developer", desc: "Developing tools like Charon SMS Bomber, MD5 Cracker, and SSH Kracker." },
         { year: "2019 - 2021", role: "Linux System Administrator", desc: "Managing, hardening, and automating Linux servers and infrastructure." }
     ],
+    commands: [
+        'help', 'about', 'skills', 'mastery', 'projects', 'certifications', 
+        'services', 'contact', 'experience', 'resume', 'theme', 'clear', 
+        'whoami', 'sudo', 'exit', 'languages'
+    ],
     services: [
         "🔒 Penetration Testing & Vulnerability Assessment",
         "⚡ Linux Server Automation & System Hardening",
