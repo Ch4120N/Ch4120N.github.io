@@ -1,5 +1,5 @@
-/* terminal.css */
-
-.terminal {
-    /* Styles for terminal */
+.terminal-window {
+    background-color: var(--terminal-bg); border-radius: 12px;
+    box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border-color);
+    font-family: 'Fira Code', monospace; max-width: 900px; margin: 0 auto;
 }
