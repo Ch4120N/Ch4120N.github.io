@@ -11,3 +11,9 @@
 }
 
 .cursor-outline.hover { width: 60px; height: 60px; background-color: rgba(255, 0, 0, 0.1); border-color: var(--accent-secondary); }
+
+/* Hide custom cursor on touch devices */
+@media (pointer: coarse) {
+    .cursor-dot, .cursor-outline { display: none; }
+    body, a, button, input { cursor: auto; }
+}
