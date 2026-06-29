@@ -74,3 +74,9 @@
 .term-progress-fill {
     height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
 }
+
+/* Multi-line Terminal Prompt */
+.terminal-prompt-multi { font-family: 'Fira Code', monospace; }
+.prompt-line-1 { color: var(--terminal-prompt); margin-bottom: 2px; user-select: none; font-size: 0.95rem; }
+.prompt-line-2 { color: var(--terminal-prompt); margin-right: 10px; user-select: none; font-size: 0.95rem; }
+.terminal-input-line { display: flex; align-items: center; }
