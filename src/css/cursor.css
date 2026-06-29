@@ -1,5 +1,6 @@
-/* cursor.css */
-
-.cursor {
-    /* Styles for cursor */
+.cursor-dot, .cursor-outline {
+    pointer-events: none; position: fixed; top: 0; left: 0;
+    transform: translate(-50%, -50%); border-radius: 50%;
+    z-index: 9999; opacity: 0; transition: opacity 0.3s ease;
 }
+
