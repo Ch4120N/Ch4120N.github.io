@@ -31,5 +31,12 @@
     function scrollToBottom() { bodyEl.scrollTop = bodyEl.scrollHeight; }
     function clearTerminal() { outputEl.innerHTML = ''; }
 
+    function showWelcome() {
+        const welcomeMsg = `
+Welcome to Ch4120N's Interactive Resume! 🚀
+Type <span class="highlight">help</span> to see available commands.
+        `;
+        printToTerminal(welcomeMsg.trim());
+    }
     
 })();
