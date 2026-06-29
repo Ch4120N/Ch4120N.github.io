@@ -20,9 +20,15 @@
 .terminal-header-right { width: 54px; }
 
 .terminal-body {
-    padding: 20px; min-height: 400px; max-height: 600px;
-    overflow-y: auto; color: var(--terminal-text); font-size: 0.95rem; line-height: 1.5;
+    flex: 1; /* Takes remaining space in fixed height */
+    padding: 20px; 
+    overflow-y: auto; 
+    color: var(--terminal-text); font-size: 0.95rem; line-height: 1.5;
+    /* Themed Scrollbar for Terminal */
+    scrollbar-width: thin;
+    scrollbar-color: var(--terminal-prompt) var(--terminal-bg);
 }
+
 .terminal-body::-webkit-scrollbar { width: 8px; }
 .terminal-body::-webkit-scrollbar-track { background: var(--terminal-bg); }
 .terminal-body::-webkit-scrollbar-thumb { background-color: var(--border-color); border-radius: 4px; }
