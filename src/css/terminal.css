@@ -14,3 +14,8 @@
 .btn-maximize { background-color: #27c93f; }
 .terminal-title { flex: 1; text-align: center; color: var(--text-secondary); font-size: 0.9rem; }
 .terminal-header-right { width: 54px; }
+
+.terminal-body {
+    padding: 20px; min-height: 400px; max-height: 600px;
+    overflow-y: auto; color: var(--terminal-text); font-size: 0.95rem; line-height: 1.5;
+}
