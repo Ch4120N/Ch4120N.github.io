@@ -271,17 +271,16 @@
 .learning-progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-secondary)); width: 0; transition: width 1.5s ease-in-out; }
 .learning-card p { color: var(--text-secondary); font-size: 0.95rem; }
 
-/* Goals */
+/* Goals & Roadmap */
 .goals-section { padding: 100px 0; background-color: var(--bg-secondary); }
-.goals-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-.goal-card {
-    background-color: var(--bg-primary); padding: 40px 30px; border-radius: 20px; border: 1px solid var(--border-color);
-    text-align: center; transition: var(--transition); position: relative; overflow: hidden;
-}
-.goal-card:hover { transform: translateY(-10px); border-color: var(--accent); box-shadow: var(--shadow); }
-.goal-icon { font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; }
-.goal-card h3 { font-size: 1.3rem; margin-bottom: 15px; color: var(--text-primary); }
-.goal-card p { color: var(--text-secondary); }
+.roadmap-container { position: relative; max-width: 800px; margin: 0 auto; padding-left: 50px; }
+.roadmap-line { position: absolute; left: 20px; top: 0; bottom: 0; width: 4px; background: var(--border-color); border-radius: 2px; }
+.roadmap-item { position: relative; margin-bottom: 40px; }
+.roadmap-icon { position: absolute; left: -50px; width: 40px; height: 40px; background: var(--bg-primary); border: 2px solid var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 1.2rem; box-shadow: 0 0 15px rgba(255,0,0,0.3); }
+.roadmap-content { background: var(--bg-primary); padding: 25px; border-radius: 15px; border: 1px solid var(--border-color); transition: var(--transition); }
+.roadmap-content:hover { transform: translateX(10px); border-color: var(--accent); }
+.roadmap-content h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--text-primary); }
+.roadmap-content p { color: var(--text-secondary); }
 
 /* Support */
 .support-section { padding: 100px 0; background-color: var(--bg-primary); }
