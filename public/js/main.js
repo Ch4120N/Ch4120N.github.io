@@ -206,7 +206,7 @@
         animate();
     }
 
-    // --- ANIMATED POWERSHELL FAVICON ---
+    // --- ANIMATED BLACK TERMINAL FAVICON ---
     (function initAnimatedFavicon() {
         const canvas = document.createElement('canvas');
         canvas.width = 64;
@@ -216,68 +216,39 @@
         
         if (!link || !ctx) return;
 
-        const textToType = "Ch4120N";
-        let currentIndex = 0;
         let cursorOn = true;
-        let waitFrames = 0;
-        let blinkCount = 0;
 
         function drawFavicon() {
-            // 1. Background (Classic PowerShell Dark Blue)
-            ctx.fillStyle = '#012456';
+            // 1. Background (Solid Black)
+            ctx.fillStyle = '#000000';
             ctx.fillRect(0, 0, 64, 64);
 
-            // 2. Draw "PS>" Prompt (PowerShell Yellow)
-            ctx.fillStyle = '#FFFF00';
-            ctx.font = 'bold 18px monospace';
+            // 2. Draw "#" Prompt (Classic Terminal Green)
+            ctx.fillStyle = '#00FF00'; 
+            ctx.font = 'bold 28px monospace';
             ctx.textBaseline = 'middle';
-            ctx.fillText('PS>', 4, 32);
+            ctx.fillText('#', 8, 34); 
 
-            // 3. Draw the Typed Command (White)
-            let currentText = textToType.substring(0, currentIndex);
-            ctx.fillStyle = '#FFFFFF';
-            ctx.fillText(currentText, 42, 32);
-
-            // 4. Draw the Blinking Block Cursor
+            // 3. Draw the Blinking Block Cursor (White)
             if (cursorOn) {
-                let textWidth = ctx.measureText(currentText).width;
-                ctx.fillStyle = '#FFFFFF';
-                // Draw a solid block cursor right after the text
-                ctx.fillRect(42 + textWidth + 2, 22, 8, 20); 
+                ctx.fillStyle = '#FFFFFF'; 
+                // Positioned perfectly next to the '#' prompt
+                ctx.fillRect(32, 18, 12, 28); 
             }
 
-            // 5. Convert Canvas to Image and update the <link> tag
+            // 4. Convert Canvas to Image and update the <link> tag
             link.href = canvas.toDataURL('image/png');
         }
 
         function animateFavicon() {
-            if (waitFrames > 0) {
-                waitFrames--;
-            } else if (currentIndex < textToType.length) {
-                // Typing phase: add a character
-                currentIndex++;
-                waitFrames = 5; // Speed of typing
-            } else {
-                // Finished typing: blink cursor
-                cursorOn = !cursorOn;
-                waitFrames = 8; // Speed of blinking
-                blinkCount++;
-                
-                // After blinking 20 times, reset and type again
-                if (blinkCount > 20) {
-                    currentIndex = 0;
-                    blinkCount = 0;
-                    cursorOn = true;
-                }
-            }
+            cursorOn = !cursorOn; // Toggle cursor visibility
             drawFavicon();
         }
 
         // Initial draw
         drawFavicon();
         
-        // Run animation at ~16 FPS (60ms interval). 
-        // This is perfectly smooth for a favicon but saves CPU compared to 60FPS.
-        setInterval(animateFavicon, 60);
+        // Blink every 500ms (standard real-time cursor blink rate)
+        setInterval(animateFavicon, 500);
     })();
 })();
