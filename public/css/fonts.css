@@ -1,0 +1,36 @@
+/* Fira Code */
+@font-face {
+    font-family: 'Fira Code';
+    src: url('../fonts/firacode/FiraCode-Regular.woff2') format('woff2'),
+         url('../fonts/firacode/FiraCode-Medium.woff2') format('woff2'),
+         url('../fonts/firacode/FiraCode-SemiBold.woff2') format('woff2');
+    font-weight: 400 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Inter */
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/inter/Inter-Regular.woff2') format('woff2'),
+         url('../fonts/inter/Inter-Medium.woff2') format('woff2'),
+         url('../fonts/inter/Inter-SemiBold.woff2') format('woff2'),
+         url('../fonts/inter/Inter-Bold.woff2') format('woff2');
+    font-weight: 300 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* FontAwesome (Adjust path if your webfonts folder is named differently) */
+@font-face {
+    font-family: 'Font Awesome 6 Free';
+    font-style: normal;
+    font-weight: 900;
+    src: url("../fonts/fontawesome/fa-solid-900.woff2") format("woff2");
+}
+@font-face {
+    font-family: 'Font Awesome 6 Brands';
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/fontawesome/fa-brands-400.woff2") format("woff2");
+}
