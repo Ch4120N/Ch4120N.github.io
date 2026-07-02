@@ -32,16 +32,24 @@
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const fill = entry.target.querySelector('.progress-bar-fill, .learning-progress-fill, .tech-progress-fill');
-                if (fill) {
-                    const progress = entry.target.getAttribute('data-progress') || fill.getAttribute('data-width');
-                    fill.style.width = `${progress}%`;
-                }
+                // 1. Core Skills & Learning Bars
+                const fill = entry.target.querySelector('.progress-bar-fill, .learning-progress-fill');
+                if (fill) fill.style.width = `${entry.target.getAttribute('data-progress')}%`;
+                
+                // 2. Tech Category Header Bars
+                const techCatFill = entry.target.querySelector('.tech-progress-fill');
+                if (techCatFill) techCatFill.style.width = `${techCatFill.getAttribute('data-width')}%`;
+
+                // 3. Individual Tech Item Card Bars
+                const techItemFill = entry.target.querySelector('.tech-item-progress-fill, .tech-progress .tech-progress-fill');
+                if (techItemFill) techItemFill.style.width = `${techItemFill.getAttribute('data-progress')}%`;
+
                 observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.2 });
-    document.querySelectorAll('.skill-item, .learning-card, .tech-category').forEach(item => observer.observe(item));
+
+    document.querySelectorAll('.skill-item, .learning-card, .tech-category, .tech-item-card').forEach(item => observer.observe(item));
 
     // Staggered Tech Icons Animation
     document.querySelectorAll('.tech-item').forEach((item, index) => {
