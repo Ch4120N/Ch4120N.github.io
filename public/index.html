@@ -72,12 +72,51 @@
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/loader.css">
     <link rel="stylesheet" href="css/terminal.css">
     <link rel="stylesheet" href="css/cursor.css">
     <link rel="stylesheet" href="css/responsive.css">
 
 </head>
 <body>
+    <div id="loader" class="loader">
+        <div class="loader-bg">
+            <div class="scanlines"></div>
+            <div class="grid-overlay"></div>
+        </div>
+        
+        <div class="loader-content">
+            <div class="loader-header">
+                <div class="loader-logo">
+                    <span class="logo-bracket">[</span>
+                    <span class="logo-text">CH4120N</span>
+                    <span class="logo-bracket">]</span>
+                    <span class="logo-blink">_</span>
+                </div>
+                <div class="loader-subtitle">SECURE SHELL v4.1.20</div>
+            </div>
+            
+            <div class="boot-sequence" id="bootSequence"></div>
+            
+            <div class="loader-progress">
+                <div class="progress-header">
+                    <span class="progress-label">SYSTEM BOOT</span>
+                    <span class="progress-percent" id="progressPercent">0%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressFill"></div>
+                    <div class="progress-glow"></div>
+                </div>
+            </div>
+            
+            <div class="loader-footer">
+                <span class="footer-text">AUTHORIZED ACCESS ONLY</span>
+                <span class="footer-separator">|</span>
+                <span class="footer-text">ENCRYPTED CONNECTION</span>
+            </div>
+        </div>
+    </div>
+
     <canvas id="global-particles"></canvas>
 
     <div class="cursor-dot"></div>
