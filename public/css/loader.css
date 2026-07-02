@@ -1,0 +1,50 @@
+.loader { position: fixed; inset: 0; z-index: 99999; background: #000; display: flex; align-items: center; justify-content: center; transition: opacity .8s ease, visibility .8s ease; }
+.loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.loader-bg { position: absolute; inset: 0; overflow: hidden; }
+.scanlines { position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 2px, rgba(255,0,0,.03) 3px, rgba(0,0,0,0) 4px); pointer-events: none; animation: scanMove 8s linear infinite; }
+@keyframes scanMove { from { background-position: 0 0; } to { background-position: 0 100px; } }
+.grid-overlay { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,0,0,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,0,0,.03) 1px, transparent 1px); background-size: 50px 50px; animation: gridPulse 4s ease-in-out infinite; }
+@keyframes gridPulse { 0%, 100% { opacity: .3; } 50% { opacity: .8; } }
+
+.loader-content { position: relative; z-index: 2; width: 90%; max-width: 700px; padding: 40px; font-family: 'Fira Code', monospace; color: #ff0000; }
+
+.loader-header { text-align: center; margin-bottom: 40px; }
+.loader-logo { font-size: 3.5rem; font-weight: 900; letter-spacing: 8px; margin-bottom: 10px; text-shadow: 0 0 20px rgba(255,0,0,.6), 0 0 40px rgba(255,0,0,.3); }
+.logo-bracket { color: #ff0000; animation: bracketPulse 2s ease-in-out infinite; }
+.logo-text { background: linear-gradient(90deg, #ff0000, #ff6b6b, #ff0000); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: shineLogo 3s linear infinite; }
+@keyframes shineLogo { to { background-position: 200% center; } }
+@keyframes bracketPulse { 0%, 100% { opacity: 1; } 50% { opacity: .4; } }
+.logo-blink { animation: blink 1s step-end infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.loader-subtitle { font-size: .85rem; color: #ff6b6b; letter-spacing: 4px; opacity: .7; }
+
+.boot-sequence { min-height: 200px; margin-bottom: 30px; font-size: .9rem; line-height: 1.8; }
+.boot-line { opacity: 0; transform: translateX(-10px); animation: lineAppear .4s forwards; white-space: nowrap; overflow: hidden; }
+@keyframes lineAppear { to { opacity: 1; transform: translateX(0); } }
+.boot-line .status-ok { color: #00ff41; font-weight: 700; margin-right: 10px; }
+.boot-line .status-warn { color: #ffbd2e; font-weight: 700; margin-right: 10px; }
+.boot-line .status-info { color: #5c9dff; font-weight: 700; margin-right: 10px; }
+.boot-line .msg { color: #c9d1d9; }
+.boot-line .path { color: #ff6b6b; }
+
+.loader-progress { margin-bottom: 30px; }
+.progress-header { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: .8rem; letter-spacing: 2px; }
+.progress-label { color: #ff6b6b; }
+.progress-percent { color: #ff0000; font-weight: 700; text-shadow: 0 0 10px rgba(255,0,0,.5); }
+.progress-track { position: relative; height: 6px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,0,0,.2); border-radius: 3px; overflow: hidden; }
+.progress-fill { height: 100%; width: 0; background: linear-gradient(90deg, #ff0000, #ff6b6b); box-shadow: 0 0 10px rgba(255,0,0,.6); transition: width .3s ease; }
+.progress-glow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent); animation: glowMove 2s linear infinite; }
+@keyframes glowMove { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
+
+.loader-footer { display: flex; justify-content: center; gap: 15px; font-size: .75rem; letter-spacing: 3px; color: #ff6b6b; opacity: .5; }
+.footer-separator { color: #ff0000; }
+
+@media (prefers-reduced-motion: reduce) {
+    .scanlines, .grid-overlay, .logo-blink, .progress-glow { animation: none; }
+}
+
+@media (max-width: 600px) {
+    .loader-logo { font-size: 2rem; letter-spacing: 4px; }
+    .loader-content { padding: 20px; }
+    .boot-sequence { font-size: .75rem; }
+}
