@@ -259,4 +259,29 @@
         // Blink every 500ms (standard real-time cursor blink rate)
         setInterval(animateFavicon, 500);
     })();
+
+    // --- MOST USED LANGUAGES HOVER EFFECT ---
+    const sliderContainer = document.getElementById('langSlider');
+    if (sliderContainer) {
+        const segments = sliderContainer.querySelectorAll('.lang-segment');
+        const labels = sliderContainer.querySelectorAll('.lang-label');
+        
+        function activateLang(lang) {
+            sliderContainer.classList.add('dimmed');
+            segments.forEach(seg => seg.classList.toggle('active', seg.dataset.lang === lang));
+            labels.forEach(lbl => lbl.classList.toggle('active', lbl.dataset.lang === lang));
+        }
+        
+        function deactivateLang() {
+            sliderContainer.classList.remove('dimmed');
+            segments.forEach(seg => seg.classList.remove('active'));
+            labels.forEach(lbl => lbl.classList.remove('active'));
+        }
+        
+        // Bind events to both slider segments and bottom labels
+        [...segments, ...labels].forEach(el => {
+            el.addEventListener('mouseenter', () => activateLang(el.dataset.lang));
+            el.addEventListener('mouseleave', deactivateLang);
+        });
+    }
 })();
