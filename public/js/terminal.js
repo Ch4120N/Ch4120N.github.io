@@ -22,7 +22,6 @@
         scrollToBottom();
     }
 
-    // Fixed: Proper HTML structure for prompt echo
     function printCommand(cmd) {
         const div = document.createElement('div');
         div.className = 'command-echo';
@@ -156,7 +155,6 @@
                             html += `<i class="fas fa-folder"></i> <span class="highlight">${repo.name}</span><br>  ${repo.description || 'No description'}<br>  <i class="fas fa-star"></i> ${repo.stargazers_count} | <i class="fas fa-code-branch"></i> ${repo.forks_count} | <a href="${repo.html_url}" target="_blank" class="link">Open</a><br><br>`;
                         });
                         html += `<i>Showing top 10. Visit GitHub for full list.</i></div>`;
-                        // Replace the loading message
                         outputEl.lastChild.innerHTML = html;
                         scrollToBottom();
                     })
@@ -295,8 +293,16 @@
             if (parts.length === 1 || (parts.length === 2 && parts[1] === '')) matches = commands.filter(cmd => cmd.startsWith(lastWord));
             else if (parts[0].toLowerCase() === 'theme') matches = ['dark', 'light'].filter(t => t.startsWith(lastWord));
 
-            if (matches.length === 1) { parts[parts.length - 1] = matches[0]; inputEl.value = parts.join(' ') + (parts.length === 1 ? ' ' : ''); }
-            else if (matches.length > 1) print(`<span class="highlight">${matches.join(', ')}</span>`);
+            if (matches.length === 1) { 
+                parts[parts.length - 1] = matches[0]; 
+                inputEl.value = parts.join(' ') + (parts.length === 1 ? ' ' : ''); 
+            } 
+            else if (matches.length > 1) {
+                // 1. Echo the current prompt and typed text to the output history
+                printCommand(input);
+                // 2. Print the suggestions below it
+                print(`<span class="highlight">${matches.join(', ')}</span>`);
+            }
             return;
         }
 
@@ -304,12 +310,11 @@
             const value = inputEl.value;
             if (value.trim()) {
                 commandHistory.push(value);
-                historyIndex = commandHistory.length; // Fixed: Reset index to end of array
+                historyIndex = commandHistory.length;
             }
             processCommand(value);
             inputEl.value = '';
         } 
-        // Fixed: Arrow Up/Down History Logic
         else if (e.key === 'ArrowUp') {
             e.preventDefault();
             if (historyIndex > 0) {
