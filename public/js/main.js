@@ -130,10 +130,10 @@
     // Random Quotes Rotation
     const quotes = [
         { text: "The quieter you become, the more you are able to hear.", author: "Altaïr Ibn-La'Ahad" },
-        { text: "There is no patch for human stupidity.", author: "Unknown" },
+        { text: "There is no patch for human stupidity.", author: "Ch4120N" },
         { text: "Any sufficiently advanced technology is equivalent to magic.", author: "Arthur C. Clarke" },
         { text: "Hackers are breaking the systems for profit. Before, it was for intellectual challenge.", author: "Kevin Mitnick" },
-        { text: "It is not enough for a programmer to be skilled; they must also be ethical.", author: "Unknown" },
+        { text: "It is not enough for a programmer to be skilled; they must also be ethical.", author: "Ch4120N" },
         { text: "Security is always excessive until it's not enough.", author: "Robbie Sinclair" }
     ];
     let quoteIndex = 0;
