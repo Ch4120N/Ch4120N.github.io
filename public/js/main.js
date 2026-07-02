@@ -34,15 +34,25 @@
             if (entry.isIntersecting) {
                 // 1. Core Skills & Learning Bars
                 const fill = entry.target.querySelector('.progress-bar-fill, .learning-progress-fill');
-                if (fill) fill.style.width = `${entry.target.getAttribute('data-progress')}%`;
+                if (fill) {
+                    // Checks parent for 'data-progress' (Skills), then checks the fill itself for 'data-width' or 'data-progress' (Learning)
+                    const progress = entry.target.getAttribute('data-progress') || fill.getAttribute('data-width') || fill.getAttribute('data-progress');
+                    if (progress) fill.style.width = `${progress}%`;
+                }
                 
                 // 2. Tech Category Header Bars
-                const techCatFill = entry.target.querySelector('.tech-progress-fill');
-                if (techCatFill) techCatFill.style.width = `${techCatFill.getAttribute('data-width')}%`;
+                const techCatFill = entry.target.querySelector('.tech-category > .tech-progress-container > .tech-progress-fill');
+                if (techCatFill) {
+                    const width = techCatFill.getAttribute('data-width');
+                    if (width) techCatFill.style.width = `${width}%`;
+                }
 
                 // 3. Individual Tech Item Card Bars
-                const techItemFill = entry.target.querySelector('.tech-item-progress-fill, .tech-progress .tech-progress-fill');
-                if (techItemFill) techItemFill.style.width = `${techItemFill.getAttribute('data-progress')}%`;
+                const techItemFill = entry.target.querySelector('.tech-progress .tech-progress-fill');
+                if (techItemFill) {
+                    const progress = techItemFill.getAttribute('data-progress');
+                    if (progress) techItemFill.style.width = `${progress}%`;
+                }
 
                 observer.unobserve(entry.target);
             }
