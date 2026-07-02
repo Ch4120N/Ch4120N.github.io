@@ -227,7 +227,7 @@
             ctx.fillStyle = '#00FF00'; 
             ctx.font = 'bold 28px monospace';
             ctx.textBaseline = 'middle';
-            ctx.fillText('#', 8, 34); 
+            ctx.fillText('$', 8, 34); 
 
             // 3. Draw the Blinking Block Cursor (White)
             if (cursorOn) {
