@@ -331,5 +331,4 @@
 
     termWindow.addEventListener('click', () => { inputEl.focus(); });
     showWelcome();
-    inputEl.focus();
 })();
