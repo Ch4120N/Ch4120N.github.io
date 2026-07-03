@@ -1,4 +1,27 @@
 (function() {
+    // === MOBILE HAMBURGER MENU ===
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav = document.getElementById('main-nav');
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+        // Close menu when a link is clicked
+        mainNav.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+        // Close menu if clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mainNav.contains(e.target) && !menuToggle.contains(e.target) && mainNav.classList.contains('active')) {
+                mainNav.classList.remove('active');
+                menuToggle.classList.remove('active');
+            }
+        });
+    }
     // Header scroll effect
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
@@ -171,15 +194,16 @@
 
         function initParticles() {
             particles = [];
-            // Adjust count based on screen size for performance
-            const count = Math.floor((canvas.width * canvas.height) / 15000); 
+            const isMobile = window.innerWidth < 768;
+            // Reduce particle count by 60% on mobile for performance
+            const density = isMobile ? 35000 : 15000; 
+            const count = Math.floor((canvas.width * canvas.height) / density);
+            
             for (let i = 0; i < count; i++) {
                 particles.push({
-                    x: Math.random() * canvas.width, 
-                    y: Math.random() * canvas.height,
-                    vx: (Math.random() - 0.5) * 0.5, 
-                    vy: (Math.random() - 0.5) * 0.5,
-                    radius: Math.random() * 2 + 1
+                    x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.5, vy: (Math.random() - 0.5) * 0.5,
+                    radius: Math.random() * (isMobile ? 1.5 : 2) + 1
                 });
             }
         }
