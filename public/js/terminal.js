@@ -1,6 +1,7 @@
 (function() {
     const outputEl = document.getElementById('terminal-output');
     const inputEl = document.getElementById('terminal-input');
+    const cursorCaret = document.getElementById('caret');
     const bodyEl = document.getElementById('terminal-body');
     const termWindow = document.getElementById('terminal-window');
 
@@ -27,11 +28,20 @@
         div.className = 'command-echo';
         div.innerHTML = `
             <div class="prompt-line-1">
-                <span class="prompt-symbol">┌──(</span><span class="prompt-user">guest</span><span class="prompt-at">㉿</span><span class="prompt-host">Ch4120N-Box</span><span class="prompt-symbol">)-[</span><span class="prompt-path">~</span><span class="prompt-symbol">]</span>
+                <div class="prompt-symbol">┌──(</div>
+                <div class="prompt-user">guest</div>
+                <div class="prompt-at">㉿</div>
+                <div class="prompt-host">Ch4120N-Box</div>
+                <div class="prompt-symbol">)-[</div>
+                <div class="prompt-path">/dev/tty1</div>
+                <div class="prompt-symbol">]</div>
             </div>
             <div class="prompt-line-2-wrap">
-                <span class="prompt-line-2"><span class="prompt-symbol">└─</span><span class="prompt-symbol-root">$</span></span>
-                <span class="cmd-text">${escapeHtml(cmd)}</span>
+                <div class="prompt-line-2">
+                    <div class="prompt-symbol">└─</div>
+                    <div class="prompt-symbol-root">$</div>
+                </div>
+                <div class="cmd-text">${escapeHtml(cmd)}</div>
             </div>`;
         outputEl.appendChild(div);
         scrollToBottom();
@@ -264,7 +274,10 @@
                 } else { print(`Current theme is <span class="highlight">${document.documentElement.getAttribute('data-theme')}</span>.`); }
                 break;
 
-            case 'clear': outputEl.innerHTML = ''; return;
+            case 'clear': 
+                outputEl.innerHTML = ''; 
+                showWelcome();
+                return;
             case 'whoami': print(`guest`); break;
             case 'sudo': print(`<span style="color:red">[sudo]</span> password for guest: <br>Nice try! But you don't have root privileges here. <i class="fas fa-smile-wink"></i>`); break;
             case 'exit': print(`Connection closed. Just kidding, you can't exit the matrix. <i class="fas fa-glasses"></i>`); break;
@@ -301,7 +314,7 @@
                 // 1. Echo the current prompt and typed text to the output history
                 printCommand(input);
                 // 2. Print the suggestions below it
-                print(`<span class="highlight">${matches.join(', ')}</span>`);
+                print(matches.join('  '));
             }
             return;
         }
@@ -334,6 +347,55 @@
         }
     });
 
-    termWindow.addEventListener('click', () => { inputEl.focus(); });
+    const mirror = document.createElement('span');
+    mirror.style.position = 'absolute';
+    mirror.style.visibility = 'hidden';
+    mirror.style.whiteSpace = 'pre';
+    mirror.style.fontFamily = getComputedStyle(inputEl).fontFamily;
+    mirror.style.fontSize = getComputedStyle(inputEl).fontSize;
+    document.body.appendChild(mirror);
+
+    function updateCaret() {
+        const inputStyle = getComputedStyle(inputEl);
+
+        // Match input’s styling exactly
+        mirror.style.font = inputStyle.font;
+        mirror.style.letterSpacing = inputStyle.letterSpacing;
+        mirror.style.padding = inputStyle.padding;
+        mirror.style.border = inputStyle.border;
+        mirror.style.boxSizing = inputStyle.boxSizing;
+
+        const textBeforeCursor = inputEl.value.substring(0, inputEl.selectionStart);
+        mirror.textContent = textBeforeCursor;
+
+        const inputRect = inputEl.getBoundingClientRect();
+        const mirrorWidth = mirror.getBoundingClientRect().width;
+        const paddingLeft = parseFloat(inputStyle.paddingLeft);
+        const borderLeft = parseFloat(inputStyle.borderLeftWidth);
+
+        // Position relative to the .terminal-input-line container
+        const left = inputRect.left + paddingLeft + mirrorWidth - borderLeft -
+                    cursorCaret.parentElement.getBoundingClientRect().left;
+
+        cursorCaret.style.left = left + 'px';
+        cursorCaret.style.display = (document.activeElement === inputEl) ? 'block' : 'none';
+    }
+
+    // Events that change cursor position
+    inputEl.addEventListener('input', updateCaret);
+    inputEl.addEventListener('keyup', updateCaret);   // for arrow keys, Ctrl+A etc.
+    inputEl.addEventListener('click', updateCaret);
+    inputEl.addEventListener('focus', updateCaret);
+    inputEl.addEventListener('blur', () => {
+        cursorCaret.style.display = 'none';
+    });
+
+    // Click anywhere in the terminal window focuses input
+    termWindow.addEventListener('click', () => {
+        inputEl.focus();
+        updateCaret();
+    });
+    updateCaret();
     showWelcome();
+    window.addEventListener('resize', updateCaret);
 })();
